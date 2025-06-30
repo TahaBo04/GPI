@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil – Génie des Procédés</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        Génie des Procédés – Espace Étudiant
+    </header>
+
+    <nav>
+        <a href="{{ url_for('home') }}">Accueil</a>
+        <a href="{{ url_for('assignments') }}">Devoirs</a>
+        <a href="{{ url_for('courses') }}">Cours</a>
+        <a href="{{ url_for('process') }}">À propos du Génie des Procédés</a>
+    </nav>
+
+    <div class="section">
+        <h1>Bienvenue sur la plateforme de la classe GPI</h1>
+        <p>
+            Cet espace est dédié au partage de connaissances, de devoirs, et de ressources pédagogiques pour tous les étudiants du département Génie des Procédés Industriels.
+            <br><br>
+            Vous pouvez :
+            <ul>
+                <li>Consulter et déposer les devoirs dans la section <strong>Devoirs</strong>.</li>
+                <li>Télécharger les supports de cours dans la section <strong>Cours</strong>.</li>
+                <li>Découvrir les débouchés, spécialisations et doubles diplômes dans <strong>À propos du Génie des Procédés</strong>.</li>
+            </ul>
+        </p>
+
+        <p style="margin-top: 30px;">
+            Ce site a été développé par vos soins, pour votre propre réussite. Explorez, partagez, apprenez.
+        </p>
+    </div>
+
+    <footer>
+        &copy; {{ 2025 }} Classe GPI – EMI
+    </footer>
+
+</body>
+</html>
