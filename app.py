@@ -51,5 +51,10 @@ def courses():
 def process():
     return render_template('process.html')
 
+@app.route('/internships')
+def internships():
+    return render_template('internships.html')
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    app.run(debug=True)
