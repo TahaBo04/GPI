@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Accueil – Génie des Procédés</title>
+    <title>Club Génie des Procédés – Accueil</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -10,36 +10,79 @@
 <div class="container">
 
     <header>
-        Génie des Procédés – Espace Étudiant
+        Club Génie des Procédés – EMI
     </header>
 
     <nav>
         <a href="{{ url_for('home') }}">Accueil</a>
-        <a href="{{ url_for('assignments') }}">Devoirs</a>
-        <a href="{{ url_for('courses') }}">Cours</a>
-        <a href="{{ url_for('process') }}">À propos du Génie des Procédés</a>
+        <a href="{{ url_for('assignments') }}">Projets</a>
+        <a href="{{ url_for('courses') }}">Ressources</a>
+        <a href="{{ url_for('process') }}">À propos du Génie</a>
     </nav>
 
     <div class="section">
-        <h1>Bienvenue sur la plateforme de la classe GPI</h1>
+        <h1>Bienvenue au Club Génie des Procédés</h1>
         <p>
-            Cet espace est dédié au partage de connaissances, de devoirs, et de ressources pédagogiques pour tous les étudiants du département Génie des Procédés Industriels.
+            Le Club Génie des Procédés est un espace dynamique et collaboratif dédié aux étudiants de l'EMI
+            passionnés par l'ingénierie des procédés industriels. Notre mission est simple :
         </p>
 
         <ul>
-            <li>📌 Consulter et déposer les devoirs dans la section <strong>Devoirs</strong>.</li>
-            <li>📘 Télécharger les supports de cours dans la section <strong>Cours</strong>.</li>
-            <li>🧭 Découvrir les débouchés, spécialisations et doubles diplômes dans <strong>À propos du Génie des Procédés</strong>.</li>
+            <li>💡 Innover à travers des projets techniques et scientifiques</li>
+            <li>🛠️ Créer des solutions concrètes pour l’industrie et l’environnement</li>
+            <li>🚀 Favoriser l’épanouissement de nos membres à travers le travail d'équipe et l’initiative</li>
+            <li>📈 Améliorer continuellement les compétences techniques et sociales de nos membres</li>
         </ul>
 
-        <p style="margin-top: 30px;">
-            Ce site a été développé par vos soins, pour votre propre réussite. <br>
-            <strong>Explorez, partagez, apprenez.</strong>
+        <p style="margin-top: 20px;">
+            Nous croyons en une génération d’ingénieurs capables de transformer le monde avec créativité, rigueur et esprit de collaboration.
+        </p>
+    </div>
+<div class="section" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; justify-content: space-between;">
+
+    <!-- 📝 Text Left Side -->
+    <div style="flex: 1; min-width: 300px;">
+        <h2>📷 Galerie du Club</h2>
+        <h3 style="color: #00c6ff;">🟦 1ère Édition de la Journée Process</h3>
+        <p><strong>📍 Lieu :</strong> École Mohammadia d’Ingénieurs</p>
+        <p><strong>📅 Date :</strong> Juin 2025</p>
+
+        <p>
+            Cette première édition de la <strong>Journée Process</strong> a marqué un tournant majeur dans les activités du club.
+            Elle a rassemblé des étudiants, des enseignants et des professionnels autour de conférences inspirantes, de stands industriels,
+            et de présentations de projets innovants liés à la transformation des procédés industriels.
+        </p>
+
+        <p>
+            L'événement a mis en lumière les talents de nos membres, et a permis de valoriser le génie des procédés à travers une journée 
+            riche en échanges, networking et ambitions pour l'avenir.
+        </p>
+
+        <p style="margin-top: 10px;">
+            Cet événement continuera à grandir et à inspirer les promotions futures.
         </p>
     </div>
 
+    <!-- 🖼️ Pictures Right Side -->
+    <div style="flex: 1; min-width: 300px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+        <img src="/static/uploads/journee1.jpeg" alt="Stand 1" style="width: 45%; border-radius: 10px;">
+        <img src="/static/uploads/journee2.jpeg" alt="Stand 2" style="width: 45%; border-radius: 10px;">
+        <img src="/static/uploads/journee3.jpeg" alt="Conférence" style="width: 45%; border-radius: 10px;">
+        <img src="/static/uploads/journee1.jpeg" alt="Équipe Club" style="width: 45%; border-radius: 10px;">
+    </div>
+
+</div>
+
+    </div>
+
     <footer>
-        &copy; 2025 Classe GPI – EMI
+        <p>&copy; 2025 Club Génie des Procédés – EMI</p>
+        <p>Suivez-nous sur :</p>
+        <div style="margin-top: 10px;">
+            <a href="https://www.linkedin.com/in/emi-process-b2b0b1292/?originalSubdomain=ma" class="button" target="_blank">Linkedin</a>
+            <a href="https://www.instagram.com/emi_process?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="button" target="_blank">Instagram</a>
+            <a href="mailto:clubgenie@emi.ac.ma" class="button">Email</a>
+        </div>
     </footer>
 
 </div>
