@@ -7,85 +7,102 @@
 </head>
 <body>
 
-<div class="container">
+<header>
+    <h1>Club Génie des Procédés – EMI</h1>
+</header>
 
-    <header>
-        Club Génie des Procédés – EMI
-    </header>
+<nav>
+    <a href="{{ url_for('home') }}">Accueil</a>
+    <a href="{{ url_for('assignments') }}">Projets</a>
+    <a href="{{ url_for('courses') }}">Ressources</a>
+    <a href="{{ url_for('process') }}">À propos</a>
+    <a href="{{ url_for('internships') }}">Stages</a>
+</nav>
 
-    <nav>
-        <a href="{{ url_for('home') }}">Accueil</a>
-        <a href="{{ url_for('assignments') }}">Projets</a>
-        <a href="{{ url_for('courses') }}">Ressources</a>
-        <a href="{{ url_for('process') }}">À propos du Génie</a>
-    </nav>
+<section class="section intro">
+    <h2>Bienvenue au Club Génie des Procédés</h2>
+    <p>
+        Le Club Génie des Procédés est un espace dynamique et collaboratif dédié aux étudiants de l'EMI passionnés par l’ingénierie des procédés industriels.
+    </p>
+    <ul>
+        <li>💡 Innover à travers des projets techniques et scientifiques</li>
+        <li>🛠️ Créer des solutions concrètes pour l’industrie et l’environnement</li>
+        <li>🚀 Favoriser l’épanouissement par l’initiative et le travail d’équipe</li>
+        <li>📈 Développer les compétences techniques et sociales de nos membres</li>
+    </ul>
+</section>
 
-    <div class="section">
-        <h1>Bienvenue au Club Génie des Procédés</h1>
-        <p>
-            Le Club Génie des Procédés est un espace dynamique et collaboratif dédié aux étudiants de l'EMI
-            passionnés par l'ingénierie des procédés industriels. Notre mission est simple :
-        </p>
-
-        <ul>
-            <li>💡 Innover à travers des projets techniques et scientifiques</li>
-            <li>🛠️ Créer des solutions concrètes pour l’industrie et l’environnement</li>
-            <li>🚀 Favoriser l’épanouissement de nos membres à travers le travail d'équipe et l’initiative</li>
-            <li>📈 Améliorer continuellement les compétences techniques et sociales de nos membres</li>
-        </ul>
-
-        <p style="margin-top: 20px;">
-            Nous croyons en une génération d’ingénieurs capables de transformer le monde avec créativité, rigueur et esprit de collaboration.
-        </p>
+<section class="section gallery">
+    <h2>📸 1ère Journée Process</h2>
+    <p><strong>📍 EMI – Juin 2025</strong></p>
+    <p>
+        Une journée marquante dédiée à la valorisation des procédés industriels, réunissant étudiants, professeurs et entreprises autour de conférences,
+        stands et networking. Une réussite totale pour une première édition !
+    </p>
+    <div class="gallery-grid">
+        <img src="/static/uploads/journee1.jpeg" alt="Stand 1">
+        <img src="/static/uploads/journee2.jpeg" alt="Stand 2">
+        <img src="/static/uploads/journee3.jpeg" alt="Conférence">
+        <img src="/static/uploads/journee1.jpg" alt="Équipe Club">
     </div>
-<div class="section" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; justify-content: space-between;">
+</section>
 
-    <!-- 📝 Text Left Side -->
-    <div style="flex: 1; min-width: 300px;">
-        <h2>📷 Galerie du Club</h2>
-        <h3 style="color: #00c6ff;">🟦 1ère Édition de la Journée Process</h3>
-        <p><strong>📍 Lieu :</strong> École Mohammadia d’Ingénieurs</p>
-        <p><strong>📅 Date :</strong> Juin 2025</p>
+<section class="section links">
+    <h2>🔗 Nos Partenaires de Stage</h2>
+    <p>Consultez nos entreprises partenaires pour stages & PFE :</p>
+    <a href="{{ url_for('internships') }}" class="button">Voir les entreprises partenaires</a>
+</section>
 
-        <p>
-            Cette première édition de la <strong>Journée Process</strong> a marqué un tournant majeur dans les activités du club.
-            Elle a rassemblé des étudiants, des enseignants et des professionnels autour de conférences inspirantes, de stands industriels,
-            et de présentations de projets innovants liés à la transformation des procédés industriels.
-        </p>
+<section class="section resources">
+    <h2>📚 Ressources & Cours</h2>
+    <p>Accédez à tous les supports pédagogiques utiles à votre parcours en Génie des Procédés.</p>
+    <a href="{{ url_for('courses') }}" class="button">Accéder aux cours</a>
+</section>
 
-        <p>
-            L'événement a mis en lumière les talents de nos membres, et a permis de valoriser le génie des procédés à travers une journée 
-            riche en échanges, networking et ambitions pour l'avenir.
-        </p>
+<section class="section projects">
+    <h2>🧪 Projets du Club</h2>
+    <p>Nous n’avons pas encore lancé de projets officiels, mais cela arrive très bientôt !</p>
+</section>
 
-        <p style="margin-top: 10px;">
-            Cet événement continuera à grandir et à inspirer les promotions futures.
-        </p>
-    </div>
-
-    <!-- 🖼️ Pictures Right Side -->
-    <div style="flex: 1; min-width: 300px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-        <img src="/static/uploads/journee1.jpeg" alt="Stand 1" style="width: 45%; border-radius: 10px;">
-        <img src="/static/uploads/journee2.jpeg" alt="Stand 2" style="width: 45%; border-radius: 10px;">
-        <img src="/static/uploads/journee3.jpeg" alt="Conférence" style="width: 45%; border-radius: 10px;">
-        <img src="/static/uploads/journee1.jpeg" alt="Équipe Club" style="width: 45%; border-radius: 10px;">
-    </div>
-
-</div>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Club Génie des Procédés – EMI</p>
-        <p>Suivez-nous sur :</p>
-        <div style="margin-top: 10px;">
-            <a href="https://www.linkedin.com/in/emi-process-b2b0b1292/?originalSubdomain=ma" class="button" target="_blank">Linkedin</a>
-            <a href="https://www.instagram.com/emi_process?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="button" target="_blank">Instagram</a>
-            <a href="mailto:clubgenie@emi.ac.ma" class="button">Email</a>
+<section class="section team" style="display: flex; flex-wrap: wrap; gap: 40px;">
+    <div class="team-left" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 30px;">
+        <div>
+            <img src="/static/uploads/president.jpeg" alt="Himmi Fatima Zahra – Présidente" class="team-img">
+            <p class="role-label">🎓 Présidente</p>
+            <p class="name-label">Himmi Fatima Zahra</p>
         </div>
-    </footer>
+        <div>
+            <img src="/static/uploads/vp.jpg" alt="Abad Mohamed – Vice-Président" class="team-img">
+            <p class="role-label">🎖️ Vice-Président</p>
+            <p class="name-label">Abad Mohamed</p>
+        </div>
+        <div>
+            <img src="/static/uploads/secretaire.jpeg" alt="Ammor Imane – Secrétaire Générale" class="team-img">
+            <p class="role-label">📋 Secrétaire Générale</p>
+            <p class="name-label">Ammor Imane</p>
+        </div>
+    </div>
 
-</div>
+    <div class="team-right" style="flex: 1;">
+        <h2 style="color: #00c6ff;">👥 Notre Équipe</h2>
+        <p style="font-size: 18px;">
+            Le Club Génie des Procédés rassemble une grande équipe d’étudiants actifs, engagés et passionnés. 
+            <br><br>
+            Parmi eux, ces trois membres sont nos leaders principaux : ils coordonnent les initiatives et représentent l’esprit du club.
+        </p>
+    </div>
+</section>
+
+
+
+<footer>
+    <p>&copy; 2025 Club Génie des Procédés – EMI</p>
+    <div>
+        <a href="https://www.linkedin.com/in/emi-process-b2b0b1292/" target="_blank">LinkedIn</a> |
+        <a href="https://www.instagram.com/emi_process/" target="_blank">Instagram</a> |
+        <a href="mailto:clubgenie@emi.ac.ma">Email</a>
+    </div>
+</footer>
 
 </body>
 </html>
