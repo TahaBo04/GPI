@@ -7,50 +7,44 @@
 </head>
 <body>
 
-<header>
-    Devoirs & Soumissions
-</header>
+<div class="container">
 
-<nav>
-    <a href="{{ url_for('home') }}">Accueil</a>
-    <a href="{{ url_for('assignments') }}">Devoirs</a>
-    <a href="{{ url_for('courses') }}">Cours</a>
-    <a href="{{ url_for('process') }}">À propos du Génie des Procédés</a>
-</nav>
+    <header>
+        Devoirs & Soumissions
+    </header>
 
-<div class="section">
-    <h1>Soumettre un devoir</h1>
+    <nav>
+        <a href="{{ url_for('home') }}">Accueil</a>
+        <a href="{{ url_for('assignments') }}">Devoirs</a>
+        <a href="{{ url_for('courses') }}">Cours</a>
+        <a href="{{ url_for('process') }}">À propos du Génie des Procédés</a>
+    </nav>
 
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
+    <div class="section">
+        <h1>Soumettre un devoir</h1>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
         <ul>
-        {% for message in messages %}
-          <li style="color: green;">{{ message }}</li>
-        {% endfor %}
+            {% for message in messages %}
+            <li style="color: green;">{{ message }}</li>
+            {% endfor %}
         </ul>
-      {% endif %}
-    {% endwith %}
+        {% endif %}
+        {% endwith %}
 
-    <form action="{{ url_for('assignments') }}" method="post" enctype="multipart/form-data">
-        <label for="file">Choisissez un fichier à déposer (PDF, DOCX, ZIP, PNG, JPG):</label><br><br>
-        <input type="file" name="file" id="file" required><br><br>
-        <button type="submit">Téléverser</button>
-    </form>
-</div>
+        <form action="{{ url_for('assignments') }}" method="post" enctype="multipart/form-data">
+            <label for="file">Choisissez un fichier à déposer (PDF, DOCX, ZIP, PNG, JPG):</label><br><br>
+            <input type="file" name="file" id="file" required><br><br>
+            <button type="submit">Téléverser</button>
+        </form>
+    </div>
 
-<div class="section">
-    <h2>📘 Travaux déjà disponibles :</h2>
-    <ul>
-        {% for filename in uploaded_files %}
-           <li><a href="{{ url_for('static', filename='uploads/' ~ filename) }}" target="_blank">{{ filename }}</a></li>
-        {% endfor %}
-
-    </ul>
-</div>
-
-<footer>
-    &copy; 2025 Classe GPI – Partage de Devoirs
-</footer>
-
-</body>
-</html>
+    <div class="section">
+        <h2>📘 Travaux déjà disponibles :</h2>
+        <ul>
+            {% for filename in uploaded_files %}
+                <li><a href="{{ url_for('static', filename='uploads/' ~ filename) }}" target="_blank">{{ filename }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
