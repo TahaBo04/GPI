@@ -1,4 +1,5 @@
-/* Reset & base */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@
 }
 
 body {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
   background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
   background-size: 400% 400%;
   animation: backgroundFade 20s ease infinite;
@@ -21,13 +22,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-.container {
-  max-width: 960px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* Header */
 header {
   background: rgba(0, 0, 0, 0.6);
   color: #00c6ff;
@@ -40,7 +34,6 @@ header {
   box-shadow: 0 0 20px #00c6ff33;
 }
 
-/* Navigation */
 nav {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 10px;
@@ -55,7 +48,7 @@ nav a {
   margin: 0 15px;
   padding: 10px 20px;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   background-color: #00c6ff;
   border-radius: 8px;
   transition: background 0.3s, color 0.3s;
@@ -66,7 +59,6 @@ nav a:hover {
   color: #fff;
 }
 
-/* Section Boxes */
 .section {
   background: rgba(255, 255, 255, 0.05);
   padding: 25px 30px;
@@ -75,13 +67,12 @@ nav a:hover {
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
 }
 
-/* Headings */
 h1, h2 {
   color: #00c6ff;
   margin-bottom: 15px;
+  font-weight: 600;
 }
 
-/* List Styles */
 ul {
   list-style: none;
   padding-left: 0;
@@ -100,7 +91,6 @@ ul li::before {
   color: #00c6ff;
 }
 
-/* Buttons (reusable) */
 button,
 a.button {
   display: inline-block;
@@ -109,7 +99,7 @@ a.button {
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
   transition: background 0.3s ease;
@@ -120,7 +110,89 @@ a.button:hover {
   background: #005d79;
 }
 
-/* Footer */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+/* Team Section */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.team-left {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.team-left img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+.team-right {
+  flex: 1;
+  min-width: 300px;
+  color: #e0e0e0;
+}
+
+.team-right .role {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.team-left img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+.team-img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+.role-label {
+  margin-top: 10px;
+  text-align: center;
+  color: #00c6ff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.name-label {
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+
+
 footer {
   text-align: center;
   color: #ccc;
