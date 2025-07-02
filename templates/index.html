@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Accueil – Génie des Procédés</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
+<div class="container">
 
     <header>
         Génie des Procédés – Espace Étudiant
@@ -22,23 +24,25 @@
         <h1>Bienvenue sur la plateforme de la classe GPI</h1>
         <p>
             Cet espace est dédié au partage de connaissances, de devoirs, et de ressources pédagogiques pour tous les étudiants du département Génie des Procédés Industriels.
-            <br><br>
-            Vous pouvez :
-            <ul>
-                <li>Consulter et déposer les devoirs dans la section <strong>Devoirs</strong>.</li>
-                <li>Télécharger les supports de cours dans la section <strong>Cours</strong>.</li>
-                <li>Découvrir les débouchés, spécialisations et doubles diplômes dans <strong>À propos du Génie des Procédés</strong>.</li>
-            </ul>
         </p>
 
+        <ul>
+            <li>📌 Consulter et déposer les devoirs dans la section <strong>Devoirs</strong>.</li>
+            <li>📘 Télécharger les supports de cours dans la section <strong>Cours</strong>.</li>
+            <li>🧭 Découvrir les débouchés, spécialisations et doubles diplômes dans <strong>À propos du Génie des Procédés</strong>.</li>
+        </ul>
+
         <p style="margin-top: 30px;">
-            Ce site a été développé par vos soins, pour votre propre réussite. Explorez, partagez, apprenez.
+            Ce site a été développé par vos soins, pour votre propre réussite. <br>
+            <strong>Explorez, partagez, apprenez.</strong>
         </p>
     </div>
 
     <footer>
-        &copy; {{ 2025 }} Classe GPI – EMI
+        &copy; 2025 Classe GPI – EMI
     </footer>
+
+</div>
 
 </body>
 </html>
