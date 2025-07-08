@@ -49,8 +49,8 @@ nav a {
   padding: 10px 20px;
   color: #ffffff;
   font-weight: 600;
-  background-color: #00c6ff;
-  border-radius: 8px;
+  background-color: transparent;
+  border: none;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -58,6 +58,68 @@ nav a:hover {
   background-color: #005d79;
   color: #fff;
 }
+
+/* Dropdown styling */
+.dropdown {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  position: relative;
+}
+
+.dropbtn {
+  font-family: 'Poppins', sans-serif;
+  background-color: #00c6ff;
+  color: white;
+  margin: 0 15px;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #00c6ff;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #111;
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #00c6ff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #005d79;
+}
+
+.arrow {
+  margin-left: 5px;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Optional: rotate arrow when dropdown is open */
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
 
 .section {
   background: rgba(255, 255, 255, 0.05);
