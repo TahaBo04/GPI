@@ -7,17 +7,37 @@
 </head>
 <body>
 
-<header>
-    <h1>Club Génie des Procédés – EMI</h1>
+<header style="display: flex; align-items: center; justify-content: center; gap: 20px; padding: 10px;">
+    <img src="/static/uploads/logo_emiprocess.jpeg" alt="EMIPROCESS Logo" style="height: 80px;">
+    <div>
+        <h1 style="margin-bottom: 5px;">EMIPROCESS</h1>
+        <p style="font-size: 14px; color: #a0ffa0;">Transforming matter, shaping the future</p>
+    </div>
 </header>
+
 
 <nav>
     <a href="{{ url_for('home') }}">Accueil</a>
     <a href="{{ url_for('assignments') }}">Projets</a>
     <a href="{{ url_for('courses') }}">Ressources</a>
     <a href="{{ url_for('process') }}">À propos</a>
-    <a href="{{ url_for('internships') }}">Stages</a>
+    <a href="{{ url_for('sponsors_protect') }}">Sponsors</a>
+
+    <div class="dropdown">
+        <a href="#" class="dropdown-btn cellules-btn">
+          Cellules <span class="arrow">&#9662;</span>
+        </a>
+        <div class="dropdown-content">
+            <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
+            <a href="{{ url_for('cellule_logistique') }}">Cellule Logistique</a>
+            <a href="{{ url_for('cellule_conception') }}">Cellule Conception</a>
+            <a href="{{ url_for('cellule_media') }}">Cellule Media</a>
+            <a href="{{ url_for('cellule_sponsoring') }}">Cellule Sponsoring</a>
+            <a href="{{ url_for('cellule_communication') }}">Cellule Communication Externe</a>
+        </div>
+    </div>
 </nav>
+
 
 <section class="section intro">
     <h2>Bienvenue au Club Génie des Procédés</h2>
