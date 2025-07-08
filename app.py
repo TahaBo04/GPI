@@ -51,13 +51,45 @@ def courses():
 def process():
     return render_template('process.html')
 
+SPONSOR_PASSWORD = 'lchgr zyad'
+
+@app.route('/sponsors_protect', methods=['GET', 'POST'])
+def sponsors_protect():
+    if request.method == 'POST':
+        password = request.form.get('password')
+        if password == SPONSOR_PASSWORD:
+            return redirect(url_for('internships'))
+        else:
+            return render_template('sponsors_protect.html', error=True)
+    return render_template('sponsors_protect.html', error=False)
+
 @app.route('/internships')
 def internships():
     return render_template('internships.html')
 
-import os
+@app.route('/cellule_projet')
+def cellule_projet():
+    return render_template('cellule_projet.html')
+
+@app.route('/cellule_logistique')
+def cellule_logistique():
+    return render_template('cellule_logistique.html')
+
+@app.route('/cellule_conception')
+def cellule_conception():
+    return render_template('cellule_conception.html')
+
+@app.route('/cellule_media')
+def cellule_media():
+    return render_template('cellule_media.html')
+
+@app.route('/cellule_sponsoring')
+def cellule_sponsoring():
+    return render_template('cellule_sponsoring.html')
+
+@app.route('/cellule_communication_externe')
+def cellule_communication():
+    return render_template('cellule_communication_externe.html')
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
-
+    app.run(debug=True)
