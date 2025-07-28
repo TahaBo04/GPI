@@ -6,16 +6,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
         .company-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 5px solid #00c6ff;
+            background: rgba(255, 255, 255, 0.08);
+            border-left: 5px solid #00ff88;
             margin: 25px 0;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 12px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0,255,136,0.2);
         }
 
         .company-card h3 {
-            color: #00c6ff;
+            color: #00ff88;
             font-size: 22px;
             margin-bottom: 10px;
         }
@@ -23,11 +23,15 @@
         .company-card p {
             margin: 4px 0;
             font-size: 16px;
-            color: #f0f0f0;
+            color: black;
         }
 
         .company-card strong {
-            color: #00c6ff;
+            color: #00ff88;
+        }
+
+        .section h2 {
+            color: #00ff88;
         }
     </style>
 </head>
@@ -36,6 +40,7 @@
 <header>
     <h1>Nos Partenaires</h1>
 </header>
+
 <nav>
     <a href="{{ url_for('home') }}">Accueil</a>
     <a href="{{ url_for('assignments') }}">Projets</a>
