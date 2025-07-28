@@ -8,10 +8,10 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+  background: #ffffff;
   background-size: 400% 400%;
   animation: backgroundFade 20s ease infinite;
-  color: #f0f0f0;
+  color: #000000;
   line-height: 1.6;
   padding: 20px;
 }
@@ -24,14 +24,14 @@ body {
 
 header {
   background: rgba(0, 0, 0, 0.6);
-  color: #00c6ff;
+  color: #00ff88;
   text-align: center;
   padding: 20px 30px;
   font-size: 30px;
   font-weight: bold;
   border-radius: 10px;
   margin-bottom: 20px;
-  box-shadow: 0 0 20px #00c6ff33;
+  box-shadow: 0 0 20px #00ff8833;
 }
 
 nav {
@@ -40,14 +40,14 @@ nav {
   border-radius: 10px;
   margin: 20px auto;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  box-shadow: 0 0 10px rgba(0,255,136,0.3);
 }
 
 nav a {
   text-decoration: none;
   margin: 0 15px;
   padding: 10px 20px;
-  color: #ffffff;
+  color: #000000;
   font-weight: 600;
   background-color: transparent;
   border: none;
@@ -55,7 +55,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #005d79;
+  background-color: #007a5e;
   color: #fff;
 }
 
@@ -68,14 +68,14 @@ nav a:hover {
 
 .dropbtn {
   font-family: 'Poppins', sans-serif;
-  background-color: #00c6ff;
+  background-color: #00ff88;
   color: white;
   margin: 0 15px;
   padding: 10px 20px;
-  color: #ffffff;
+  color: #000000;
   font-size: 15px;
   font-weight: 600;
-  background-color: #00c6ff;
+  background-color: #00ff88;
   border-radius: 8px;
   transition: background 0.3s, color 0.3s;
 }
@@ -98,7 +98,7 @@ nav a:hover {
 }
 
 .dropdown-content a:hover {
-  background-color: #00c6ff;
+  background-color: #00ff88;
 }
 
 .dropdown:hover .dropdown-content {
@@ -106,7 +106,7 @@ nav a:hover {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #005d79;
+  background-color: #007a5e;
 }
 
 .arrow {
@@ -130,7 +130,7 @@ nav a:hover {
 }
 
 h1, h2 {
-  color: #00c6ff;
+  color: #00ff88;
   margin-bottom: 15px;
   font-weight: 600;
 }
@@ -150,14 +150,14 @@ ul li::before {
   content: "➤";
   position: absolute;
   left: 0;
-  color: #00c6ff;
+  color: #00ff88;
 }
 
 button,
 a.button {
   display: inline-block;
   padding: 10px 20px;
-  background: #00c6ff;
+  background: #00ff88;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -169,21 +169,31 @@ a.button {
 
 button:hover,
 a.button:hover {
-  background: #005d79;
+  background: #007a5e;
 }
+
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
 }
 
 .gallery-grid img {
   width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.3);
 }
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
 
 /* Team Section */
 .team {
@@ -206,13 +216,13 @@ a.button:hover {
 .team-left img {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+  box-shadow: 0 0 15px rgba(0,255,136,0.3);
 }
 
 .team-right {
   flex: 1;
   min-width: 300px;
-  color: #e0e0e0;
+  color: #000000;
 }
 
 .team-right .role {
@@ -226,7 +236,7 @@ a.button:hover {
   max-height: 300px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+  box-shadow: 0 0 15px rgba(0,255,136,0.3);
 }
 
 .team-img {
@@ -235,13 +245,13 @@ a.button:hover {
   object-fit: cover;
   object-position: top;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+  box-shadow: 0 0 15px rgba(0,255,136,0.3);
 }
 
 .role-label {
   margin-top: 10px;
   text-align: center;
-  color: #00c6ff;
+  color: #00ff88;
   font-weight: bold;
   font-size: 18px;
 }
@@ -249,7 +259,7 @@ a.button:hover {
 .name-label {
   text-align: center;
   font-size: 16px;
-  color: #ffffff;
+  color: #000000;
   margin-top: 5px;
 }
 
