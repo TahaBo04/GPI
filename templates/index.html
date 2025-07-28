@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <title>Club Génie des Procédés – Accueil</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header style="display: flex; align-items: center; justify-content: center; gap: 20px; padding: 10px;">
+<header style="background: white; display: flex; align-items: center; justify-content: center; gap: 20px; padding: 15px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,255,0,0.2);">
     <img src="/static/uploads/logo_emiprocess.jpeg" alt="EMIPROCESS Logo" style="height: 80px;">
     <div>
-        <h1 style="margin-bottom: 5px;">EMIPROCESS</h1>
-        <p style="font-size: 14px; color: #a0ffa0;">Transforming matter, shaping the future</p>
+        <h1 style="margin-bottom: 5px; color: black;">EMIPROCESS</h1>
+        <p style="font-size: 14px; color: green;">Transforming matter, shaping the future</p>
     </div>
 </header>
 
 
-<nav>
+<nav class="navbar">
     <a href="{{ url_for('home') }}">Accueil</a>
     <a href="{{ url_for('assignments') }}">Projets</a>
     <a href="{{ url_for('courses') }}">Ressources</a>
     <a href="{{ url_for('process') }}">À propos</a>
     <a href="{{ url_for('sponsors_protect') }}">Sponsors</a>
-
     <div class="dropdown">
         <a href="#" class="dropdown-btn cellules-btn">
-          Cellules <span class="arrow">&#9662;</span>
+            Cellules <span class="arrow">&#9662;</span>
         </a>
         <div class="dropdown-content">
             <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
@@ -38,12 +38,9 @@
     </div>
 </nav>
 
-
 <section class="section intro">
     <h2>Bienvenue au Club Génie des Procédés</h2>
-    <p>
-        Le Club Génie des Procédés est un espace dynamique et collaboratif dédié aux étudiants de l'EMI passionnés par l’ingénierie des procédés industriels.
-    </p>
+    <p>Le Club Génie des Procédés est un espace dynamique et collaboratif dédié aux étudiants de l'EMI passionnés par l’ingénierie des procédés industriels.</p>
     <ul>
         <li>💡 Innover à travers des projets techniques et scientifiques</li>
         <li>🛠️ Créer des solutions concrètes pour l’industrie et l’environnement</li>
@@ -55,10 +52,7 @@
 <section class="section gallery">
     <h2>📸 1ère Journée Process</h2>
     <p><strong>📍 EMI – Juin 2025</strong></p>
-    <p>
-        Une journée marquante dédiée à la valorisation des procédés industriels, réunissant étudiants, professeurs et entreprises autour de conférences,
-        stands et networking. Une réussite totale pour une première édition !
-    </p>
+    <p>Une journée marquante dédiée à la valorisation des procédés industriels, réunissant étudiants, professeurs et entreprises autour de conférences, stands et networking. Une réussite totale pour une première édition !</p>
     <div class="gallery-grid">
         <img src="/static/uploads/journee1.jpeg" alt="Stand 1">
         <img src="/static/uploads/journee2.jpeg" alt="Stand 2">
@@ -84,36 +78,29 @@
     <p>Nous n’avons pas encore lancé de projets officiels, mais cela arrive très bientôt !</p>
 </section>
 
-<section class="section team" style="display: flex; flex-wrap: wrap; gap: 40px;">
-    <div class="team-left" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 30px;">
+<section class="section team">
+    <div class="team-left">
         <div>
             <img src="/static/uploads/president.jpeg" alt="Himmi Fatima Zahra – Présidente" class="team-img">
-            <p class="role-label">🎓 Présidente</p>
+            <p class="role-label">Présidente</p>
             <p class="name-label">Himmi Fatima Zahra</p>
         </div>
         <div>
             <img src="/static/uploads/vp.jpg" alt="Abad Mohamed – Vice-Président" class="team-img">
-            <p class="role-label">🎖️ Vice-Président</p>
+            <p class="role-label">Vice-Président</p>
             <p class="name-label">Abad Mohamed</p>
         </div>
         <div>
             <img src="/static/uploads/secretaire.jpeg" alt="Ammor Imane – Secrétaire Générale" class="team-img">
-            <p class="role-label">📋 Secrétaire Générale</p>
+            <p class="role-label">Secrétaire Générale</p>
             <p class="name-label">Ammor Imane</p>
         </div>
     </div>
-
-    <div class="team-right" style="flex: 1;">
-        <h2 style="color: #00c6ff;">👥 Notre Équipe</h2>
-        <p style="font-size: 18px;">
-            Le Club Génie des Procédés rassemble une grande équipe d’étudiants actifs, engagés et passionnés. 
-            <br><br>
-            Parmi eux, ces trois membres sont nos leaders principaux : ils coordonnent les initiatives et représentent l’esprit du club.
-        </p>
+    <div class="team-right">
+        <h2 class="green-title">👥 Notre Équipe</h2>
+        <p>Le Club Génie des Procédés rassemble une grande équipe d’étudiants actifs, engagés et passionnés.<br><br>Parmi eux, ces trois membres sont nos leaders principaux : ils coordonnent les initiatives et représentent l’esprit du club.</p>
     </div>
 </section>
-
-
 
 <footer>
     <p>&copy; 2025 Club Génie des Procédés – EMI</p>
