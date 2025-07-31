@@ -273,3 +273,25 @@ footer {
   margin-top: 30px;
   border-top: 1px solid #444;
 }
+
+/* Extra space between the last text paragraph and the gallery grid */
+.section.gallery p:last-of-type {
+  margin-bottom: 28px;   /* tweak: 20–40px as you like */
+}
+
+/* (optional) a bit more gap inside the grid itself */
+.gallery-grid {
+  gap: 20px;             /* was 15px – adjust if you want larger spacing between images */
+}
+
+/* Spacing around the CTA links/buttons inside sections */
+.section a.button {
+  display: inline-block;   /* lets margin-top work reliably */
+  margin-top: 14px;        /* space above the button */
+  margin-bottom: 6px;      /* small space below (optional) */
+}
+
+/* Give the paragraph a bit of breathing room too */
+.section p {
+  margin-bottom: 10px;
+}
