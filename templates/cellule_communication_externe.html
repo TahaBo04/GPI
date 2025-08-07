@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cellule Communication Externe – EMIPROCESS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Cellule Communication Externe</h1>
+</header>
+
+<nav>
+    <a href="{{ url_for('home') }}">Accueil</a>
+    <a href="{{ url_for('assignments') }}">Projets</a>
+    <a href="{{ url_for('courses') }}">Ressources</a>
+    <a href="{{ url_for('process') }}">À propos</a>
+    <a href="{{ url_for('sponsors_protect') }}">Sponsors</a>
+
+    <div class="dropdown">
+        <a href="#" class="dropdown-btn cellules-btn">
+            Cellules <span class="arrow">&#9662;</span>
+        </a>
+        <div class="dropdown-content">
+            <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
+            <a href="{{ url_for('cellule_logistique') }}">Cellule Logistique</a>
+            <a href="{{ url_for('cellule_conception') }}">Cellule Conception</a>
+            <a href="{{ url_for('cellule_media') }}">Cellule Media</a>
+            <a href="{{ url_for('cellule_sponsoring') }}">Cellule Sponsoring</a>
+            <a href="{{ url_for('cellule_communication') }}">Cellule Communication Externe</a>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <h2>Rôle de la Cellule Communication Externe</h2>
+    <p>
+        La <strong>Cellule Communication Externe</strong> est chargée de gérer les relations du club avec l’extérieur.
+        Elle veille à la cohérence et à l’efficacité des échanges entre le club et ses divers interlocuteurs (entreprises, écoles, médias, etc.).
+    </p>
+    <p>Ses responsabilités principales incluent :</p>
+    <ul>
+        <li>Entretenir et développer le réseau externe du club</li>
+        <li>Assurer la visibilité du club dans les événements académiques et industriels</li>
+        <li>Représenter le club auprès des institutions et partenaires potentiels</li>
+        <li>Coordonner les échanges inter-associatifs et inter-écoles</li>
+    </ul>
+    <p>
+        Cette cellule joue un rôle stratégique dans l’ouverture du club sur le monde extérieur et dans la valorisation de ses actions.
+    </p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Club Génie des Procédés – EMI</p>
+</footer>
+
+</body>
+</html>
