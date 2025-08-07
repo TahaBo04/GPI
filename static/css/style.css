@@ -295,3 +295,71 @@ footer {
 .section p {
   margin-bottom: 10px;
 }
+
+/* Make headers stand out slightly more */
+h1, h2 {
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+/* Improve spacing between sections */
+.section {
+  margin-top: 40px;
+  padding: 30px;
+}
+
+/* Add gentle animation to links */
+a, a.button {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Smooth hover glow for buttons */
+a.button:hover {
+  box-shadow: 0 0 10px #00ff88aa;
+}
+
+/* Add a subtle fade-in effect to section content */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive image resizing in team and cellules */
+.team-img,
+.cellule-img {
+  max-height: 340px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+/* Make text blocks more readable on mobile */
+@media (max-width: 768px) {
+  .team,
+  .cellule {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  nav {
+    font-size: 14px;
+  }
+
+  .dropdown-content {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+
+
+
