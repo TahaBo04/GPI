@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cellule Projet – EMIPROCESS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Cellule Projet</h1>
+</header>
+
+<nav>
+    <a href="{{ url_for('home') }}">Accueil</a>
+    <a href="{{ url_for('assignments') }}">Projets</a>
+    <a href="{{ url_for('courses') }}">Ressources</a>
+    <a href="{{ url_for('process') }}">À propos</a>
+    <a href="{{ url_for('sponsors_protect') }}">Sponsors</a>
+    
+    <div class="dropdown">
+        <a href="#" class="dropdown-btn cellules-btn">
+            Cellules <span class="arrow">&#9662;</span>
+        </a>
+        <div class="dropdown-content">
+            <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
+            <a href="{{ url_for('cellule_logistique') }}">Cellule Logistique</a>
+            <a href="{{ url_for('cellule_conception') }}">Cellule Conception</a>
+            <a href="{{ url_for('cellule_media') }}">Cellule Media</a>
+            <a href="{{ url_for('cellule_sponsoring') }}">Cellule Sponsoring</a>
+            <a href="{{ url_for('cellule_communication') }}">Cellule Communication Externe</a>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <h2>Définition de la Cellule Projet</h2>
+    <p>
+        La Cellule Projet est le moteur d’innovation technique du club. Elle est responsable de concevoir, développer et superviser les projets scientifiques ou industriels du club.
+        Elle agit en collaboration avec les autres cellules pour transformer les idées en solutions concrètes. Son objectif est d’apporter une valeur technique réelle à travers des initiatives bien structurées.
+    </p>
+</section>
+
+<section class="section" style="text-align: center;">
+    <h2>Chef de Cellule</h2>
+    <img src="/static/uploads/chef_projet.jpeg" alt="Chef de la Cellule Projet" class="team-img" style="max-width: 300px; margin: 20px auto;">
+    <p class="role-label">👷‍♂️ Chef de la Cellule Projet</p>
+    <p class="name-label">[Nom du chef à insérer]</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Club Génie des Procédés – EMI</p>
+</footer>
+
+</body>
+</html>
