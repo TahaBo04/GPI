@@ -53,19 +53,3 @@
     </form>
 </div>
 
-<div class="section">
-    <h2>📘 Travaux déjà disponibles :</h2>
-    <ul>
-        {% for filename in uploaded_files %}
-           <li><a href="{{ url_for('static', filename='uploads/' ~ filename) }}" target="_blank">{{ filename }}</a></li>
-        {% endfor %}
-
-    </ul>
-</div>
-
-<footer>
-    &copy; 2025 Classe GPI – Partage de Devoirs
-</footer>
-
-</body>
-</html>
