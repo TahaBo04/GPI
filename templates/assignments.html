@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Devoirs – GPI</title>
+    <title>Projects – GPI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
 <header>
-    Devoirs & Soumissions
+    Projects and works
 </header>
 
 <nav>
@@ -34,7 +34,7 @@
 </nav>
 
 <div class="section">
-    <h1>Soumettre un devoir</h1>
+    <h1>Soumettre un projet</h1>
 
     {% with messages = get_flashed_messages() %}
       {% if messages %}
@@ -52,4 +52,5 @@
         <button type="submit">Téléverser</button>
     </form>
 </div>
+
 
