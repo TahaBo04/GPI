@@ -91,6 +91,12 @@ def cellule_sponsoring():
 def cellule_communication():
     return render_template('cellule_communication_externe.html')
 
+@app.route('/cellule_formation')
+def cellule_formation():
+    return render_template('cellule_formation.html')
+
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
+
