@@ -11,7 +11,7 @@ app.config["UPLOAD_FOLDER"] = os.path.join("static", "uploads")
 ALLOWED_EXTENSIONS = {"pdf", "docx", "zip", "png", "jpg", "jpeg"}
 
 # Access code for uploads (change it in Vercel env later)
-UPLOAD_ACCESS_CODE = os.environ.get("UPLOAD_ACCESS_CODE", "GPI2026")
+UPLOAD_ACCESS_CODE = os.environ.get("UPLOAD_ACCESS_CODE", "zyad lchgr")
 
 # Where we store metadata
 PROJECTS_DB_PATH = os.path.join("static", "projects.json")
@@ -183,3 +183,4 @@ def cellule_formation():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)
+
