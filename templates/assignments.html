@@ -53,7 +53,8 @@
         Dépôt protégé. Entrez le code d’accès pour pouvoir téléverser.
       </p>
 
-      <form action="{{ url_for('assignments') }}" method="post" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+      <form action="{{ url_for('assignments') }}" method="post"
+            style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
         <input type="hidden" name="action" value="unlock">
         <input type="password" name="access_code" placeholder="Code d’accès" required
                style="padding:10px 12px; border-radius:8px; border:1px solid #ddd; min-width:240px;">
@@ -73,7 +74,7 @@
       <label for="category"><strong>Catégorie</strong></label><br>
       <select name="category" id="category" required
               style="width:100%; max-width:320px; padding:10px 12px; border-radius:8px; border:1px solid #ddd; margin-top:8px;">
-        <option value="Classic project">Classic project</option>
+        <option value="PFE">PFE</option>
         <option value="Hackathon">Hackathon</option>
         <option value="Course project">Course project</option>
       </select><br><br>
@@ -83,7 +84,7 @@
                 style="width:100%; max-width:700px; padding:10px 12px; border-radius:8px; border:1px solid #ddd; margin-top:8px;"
                 placeholder="Objectif, contexte, livrables, etc."></textarea><br><br>
 
-      <label for="file"><strong>Fichier</strong> (PDF, DOCX, ZIP, PNG, JPG)</label><br>
+      <label for="file"><strong>Fichier</strong> (PDF, DOCX, ZIP, PNG, JPG, JPEG)</label><br>
       <input type="file" name="file" id="file" required style="margin-top:10px;"><br><br>
 
       <button type="submit">Téléverser</button>
@@ -109,13 +110,24 @@
             <p style="margin-bottom: 10px;">{{ p.description }}</p>
           {% endif %}
 
-          <p style="font-size: 13px; color: #333; margin-bottom: 10px;">
+          <p style="font-size: 13px; color: #333; margin-bottom: 12px;">
             Déposé le: {{ p.uploaded_at }}
           </p>
 
-          <a class="button" href="{{ url_for('static', filename='uploads/' ~ p.filename) }}" target="_blank">
-            Télécharger
-          </a>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            <a class="button" href="{{ url_for('static', filename='uploads/' ~ p.filename) }}" target="_blank">
+              Télécharger
+            </a>
+
+            {% if can_upload %}
+              <form method="POST"
+                    action="{{ url_for('delete_project', filename=p.filename) }}"
+                    onsubmit="return confirm('Supprimer ce projet ?');"
+                    style="display:inline;">
+                <button type="submit" style="background:#c0392b;">Supprimer</button>
+              </form>
+            {% endif %}
+          </div>
         </div>
       {% endfor %}
     </div>
@@ -130,4 +142,3 @@
 
 </body>
 </html>
-
