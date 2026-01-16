@@ -315,7 +315,7 @@ a, a.button {
 
 /* Smooth hover glow for buttons */
 a.button:hover {
-  box-shadow: 0 0 10px #00ff88aa;
+  box-shadow: 0 0 10px ##009a00aa;
 }
 
 /* Add a subtle fade-in effect to section content */
@@ -360,6 +360,7 @@ a.button:hover {
     width: 100%;
   }
 }
+
 
 
 
