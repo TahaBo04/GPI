@@ -116,6 +116,29 @@ def assignments():
     can_upload = bool(session.get("can_upload"))
     return render_template("assignments.html", projects=projects, can_upload=can_upload)
 
+@app.route("/delete_project/<filename>", methods=["POST"])
+def delete_project(filename):
+    if not session.get("can_upload"):
+        flash("Accès refusé.")
+        return redirect(url_for("assignments"))
+
+    projects = load_projects()
+
+    # Remove project from list
+    updated_projects = [p for p in projects if p["filename"] != filename]
+
+    if len(updated_projects) == len(projects):
+        flash("Projet introuvable.")
+        return redirect(url_for("assignments"))
+
+    # Delete file from disk
+    file_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+    if os.path.exists(file_path):
+        os.remove(file_path)
+
+    save_projects(updated_projects)
+    flash("Projet supprimé avec succès.")
+    return redirect(url_for("assignments"))
 
 @app.route("/courses")
 def courses():
@@ -183,4 +206,5 @@ def cellule_formation():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)
+
 
