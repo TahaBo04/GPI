@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Cellule Logistique – EMIPROCESS{% endblock %}
+
+{% block header %}
+<div class="page-header">
+    <img src="{{ url_for('static', filename='uploads/logo_emiprocess.jpeg') }}" alt="EMIPROCESS Logo">
+    <div>
+        <h1>Cellule Logistique</h1>
+        <p>Transforming matter, shaping the future</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="section">
+    <h2>Rôle de la Cellule Logistique</h2>
+    <p>
+        La <strong>Cellule Logistique</strong> assure le bon déroulement opérationnel de toutes les activités du club. 
+        Elle est responsable de la planification matérielle, de l'organisation des événements, de la coordination des ressources et du respect des délais. 
+    </p>
+    <p>
+        Elle joue un rôle clé dans :
+    </p>
+    <ul>
+        <li>La gestion des besoins logistiques avant, pendant et après chaque événement</li>
+        <li>La coordination avec les autres cellules pour garantir une exécution fluide</li>
+        <li>La planification des ressources (salles, équipements, matériel technique, etc.)</li>
+        <li>Le suivi du bon déroulement des événements sur le terrain</li>
+        <li>La résolution des imprévus et le maintien de la rigueur organisationnelle</li>
+    </ul>
+    <p>
+        La rigueur, l'anticipation et la réactivité de cette cellule sont essentielles à la réussite des actions menées par EMIPROCESS.
+    </p>
+</section>
+
+<section class="section">
+    <h2>Responsable de la Cellule</h2>
+    <div class="team-container">
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='uploads/chef_logistique.jpeg') }}" alt="Chef Logistique" class="team-img">
+            <p class="role-label">Responsable Cellule Logistique</p>
+            <p class="name-label">Lamsiah Youssef | Ouaosadine Mohammed</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

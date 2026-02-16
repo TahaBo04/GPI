@@ -1,0 +1,125 @@
+/* Base styles and CSS variables for GPI application */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* CSS Variables for consistent theming */
+:root {
+  --primary-color: #009a00;
+  --primary-hover: #007a5e;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --text-light: #ccc;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 255, 136, 0.3);
+  --shadow-dark: rgba(0, 0, 0, 0.2);
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+  --overlay-light: rgba(255, 255, 255, 0.05);
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  --transition-speed: 0.3s;
+}
+
+/* Global reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--background-color);
+  background-size: 400% 400%;
+  animation: backgroundFade 20s ease infinite;
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+@keyframes backgroundFade {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+a {
+  transition: all var(--transition-speed) ease-in-out;
+  text-decoration: none;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+ul li::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mb-1 {
+  margin-bottom: 10px;
+}
+
+.mb-2 {
+  margin-bottom: 20px;
+}
+
+.mt-1 {
+  margin-top: 10px;
+}
+
+.mt-2 {
+  margin-top: 20px;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}

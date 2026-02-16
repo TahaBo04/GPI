@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Club Génie des Procédés{% endblock %}</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sections.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+{% block header %}
+<div class="page-header">
+    <img src="{{ url_for('static', filename='uploads/logo_emiprocess.jpeg') }}" alt="EMIPROCESS Logo">
+    <div>
+        <h1>EMIPROCESS</h1>
+        <p>Transforming matter, shaping the future</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block nav %}
+<nav class="navbar">
+    <a href="{{ url_for('main.home') }}">Accueil</a>
+    <a href="{{ url_for('projects.assignments') }}">Projets</a>
+    <a href="{{ url_for('resources.courses') }}">Ressources</a>
+    <a href="{{ url_for('main.process') }}">À propos</a>
+    <a href="{{ url_for('partners.sponsors_protect') }}">Partenaires</a>
+    <div class="dropdown">
+        <a href="#" class="dropdown-btn cellules-btn">
+            Cellules <span class="arrow">&#9662;</span>
+        </a>
+        <div class="dropdown-content">
+            <a href="{{ url_for('teams.cellule_projet') }}">Cellule Projet</a>
+            <a href="{{ url_for('teams.cellule_logistique') }}">Cellule Logistique</a>
+            <a href="{{ url_for('teams.cellule_conception') }}">Cellule Conception</a>
+            <a href="{{ url_for('teams.cellule_media') }}">Cellule Media</a>
+            <a href="{{ url_for('teams.cellule_sponsoring') }}">Cellule Sponsoring</a>
+            <a href="{{ url_for('teams.cellule_communication') }}">Cellule Communication Externe</a>
+            <a href="{{ url_for('teams.cellule_formation') }}">Cellule formation</a>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block flash_messages %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="flash-messages">
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+<footer>
+    <p>&copy; 2025 Club Génie des Procédés – EMI</p>
+    <div>
+        <a href="https://www.linkedin.com/in/emi-process-b2b0b1292/" target="_blank">LinkedIn</a> |
+        <a href="https://www.instagram.com/emi_process/" target="_blank">Instagram</a> |
+        <a href="mailto:clubgenie@emi.ac.ma">Email</a>
+    </div>
+</footer>
+{% endblock %}
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>
