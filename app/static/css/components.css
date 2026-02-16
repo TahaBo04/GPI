@@ -208,6 +208,33 @@ label {
   margin: 10px 0;
 }
 
+/* Company card for internships/partners */
+.company-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 5px solid var(--primary-color);
+  margin: 25px 0;
+  padding: 20px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 0 12px var(--shadow-color);
+}
+
+.company-card h3 {
+  color: var(--primary-color);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.company-card p {
+  margin: 4px 0;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.company-card strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
 /* Team member containers */
 .team-container {
   display: flex;
