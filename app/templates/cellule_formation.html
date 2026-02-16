@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cellule Formation – EMIPROCESS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Cellule Formation</h1>
+</header>
+
+<nav>
+    <a href="{{ url_for('home') }}">Accueil</a>
+    <a href="{{ url_for('assignments') }}">Projets</a>
+    <a href="{{ url_for('courses') }}">Ressources</a>
+    <a href="{{ url_for('process') }}">À propos</a>
+    <a href="{{ url_for('sponsors_protect') }}">Sponsors</a>
+
+    <div class="dropdown">
+        <a href="#" class="dropdown-btn cellules-btn">
+            Cellules <span class="arrow">&#9662;</span>
+        </a>
+        <div class="dropdown-content">
+            <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
+            <a href="{{ url_for('cellule_logistique') }}">Cellule Logistique</a>
+            <a href="{{ url_for('cellule_conception') }}">Cellule Conception</a>
+            <a href="{{ url_for('cellule_media') }}">Cellule Media</a>
+            <a href="{{ url_for('cellule_sponsoring') }}">Cellule Sponsoring</a>
+            <a href="{{ url_for('cellule_communication') }}">Cellule Communication Externe</a>
+            <a href="{{ url_for('cellule_formation') }}">Cellule Formation</a>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <h2>Présentation de la Cellule Formation</h2>
+
+    <p>
+        La <strong>Cellule Formation</strong> est dédiée à l’accompagnement des étudiants, en particulier les nouveaux membres du club, 
+        vers la maîtrise d’outils techniques essentiels à leur évolution académique et professionnelle.
+    </p>
+
+    <p>
+        Cette cellule joue un rôle fondamental dans la montée en compétences du club en assurant des formations structurées, 
+        adaptées au parcours de l’ingénieur procédés et aux besoins de la compétition.
+    </p>
+
+    <h3 style="margin-top: 20px; color: #00ff88;">Programmes de formation proposés :</h3>
+
+    <ul>
+        <li>C++ – Programmation avancée et algorithmique</li>
+        <li>CATIA – Modélisation 3D et dimensionnement mécanique</li>
+        <li>Aspen HYSYS – Simulation des procédés industriels</li>
+        <li>Développement Web : HTML, CSS, JavaScript, Python Flask</li>
+        <li>Développement Mobile : Kotlin</li>
+        <li>Excel – Analyse et traitement de données</li>
+        <li>Machine Learning (Python) – IA appliquée</li>
+        <li>Frontend avancé : React (optionnel pour membres avancés)</li>
+        <li>Power BI – Visualisation professionnelle de données</li>
+        <li>ANOVA – Analyse de variance et statistiques appliquées</li>
+    </ul>
+
+    <p>
+        La cellule garantit un apprentissage progressif, orienté projet, permettant aux étudiants de développer une véritable expertise technique dès la 1ère année.
+    </p>
+</section>
+
+<section class="section">
+    <h2>Responsables de la Cellule</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: center; margin-top: 30px;">
+
+        <div style="text-align: center;">
+            <img src="{{ url_for('static', filename='uploads/chef_formation.jpeg') }}" alt="Chef Projet 1" class="team-img" style="max-width: 280px;">
+            <p class="role-label">Responsable Cellule Formation</p>
+            <p class="name-label">Akroud Doha | Zbair Aya</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Club Génie des Procédés – EMI</p>
+</footer>
+
+</body>
+</html>

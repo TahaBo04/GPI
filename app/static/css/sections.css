@@ -1,0 +1,145 @@
+/* Section and content area styles */
+
+/* Generic section container */
+.section {
+  background: var(--overlay-light);
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 0 12px var(--shadow-dark);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Intro section */
+.intro {
+  animation-delay: 0.1s;
+}
+
+/* Gallery section */
+.gallery {
+  animation-delay: 0.2s;
+}
+
+.gallery p:last-of-type {
+  margin-bottom: 28px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.gallery-grid img {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  transition: transform var(--transition-speed) ease-in-out;
+  box-shadow: 0 0 12px var(--shadow-color);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Links section */
+.links {
+  animation-delay: 0.3s;
+}
+
+/* Resources section */
+.resources {
+  animation-delay: 0.4s;
+}
+
+/* Projects section */
+.projects {
+  animation-delay: 0.5s;
+}
+
+/* Team section */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 60px;
+  animation-delay: 0.6s;
+}
+
+.team-left {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.team-left > div {
+  text-align: center;
+}
+
+.team-right {
+  flex: 1;
+  min-width: 300px;
+  color: var(--text-color);
+}
+
+.team-right .role {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.team-img {
+  width: 100%;
+  height: auto;
+  max-height: 330px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 0 15px var(--shadow-color);
+}
+
+.role-label {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.name-label {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-color);
+  margin-top: 5px;
+}
+
+/* Cellule sections */
+.cellule {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.cellule > div {
+  text-align: center;
+}
+
+.cellule-img {
+  max-width: 280px;
+  max-height: 340px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 0 10px var(--shadow-color);
+}

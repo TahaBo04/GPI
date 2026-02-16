@@ -1,0 +1,235 @@
+/* Responsive design for mobile and tablet devices */
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  body {
+    padding: 15px;
+  }
+
+  .section {
+    padding: 25px;
+    margin: 30px auto;
+  }
+
+  nav a, .navbar a {
+    margin: 0 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .page-header img {
+    height: 70px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .section {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  /* Navigation */
+  nav, .navbar {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  nav a, .navbar a {
+    display: block;
+    margin: 5px 0;
+    padding: 10px;
+  }
+
+  .dropdown {
+    display: block;
+  }
+
+  .dropdown-content {
+    position: static;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+    margin-top: 5px;
+  }
+
+  .dropdown:hover .dropdown-content,
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  /* Header */
+  header {
+    font-size: 24px;
+    padding: 15px 20px;
+  }
+
+  .page-header {
+    padding: 12px;
+    gap: 15px;
+  }
+
+  .page-header img {
+    height: 60px;
+  }
+
+  .page-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .page-header p {
+    font-size: 12px;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .gallery-grid img {
+    max-width: 100%;
+  }
+
+  /* Team */
+  .team,
+  .cellule {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .team-left,
+  .team-right {
+    min-width: 100%;
+  }
+
+  .team-img,
+  .cellule-img {
+    max-height: 300px;
+  }
+
+  /* Forms */
+  input[type="text"],
+  input[type="password"],
+  input[type="file"],
+  select,
+  textarea {
+    max-width: 100%;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-inline input,
+  .form-inline select,
+  .form-inline button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Buttons */
+  button,
+  .button,
+  a.button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-item button {
+    width: auto;
+    margin-bottom: 5px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .section {
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  nav a, .navbar a {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .page-header img {
+    height: 50px;
+  }
+
+  .page-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .project-item {
+    padding: 12px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 15px;
+  }
+}
+
+/* Print styles */
+@media print {
+  nav, .navbar,
+  button,
+  .button,
+  .dropdown,
+  .project-actions {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+    padding: 0;
+  }
+
+  .section {
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects – GPI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+  Projects and works
+</header>
+
+<nav>
+  <a href="{{ url_for('home') }}">Accueil</a>
+  <a href="{{ url_for('assignments') }}">Projets</a>
+  <a href="{{ url_for('courses') }}">Ressources</a>
+  <a href="{{ url_for('process') }}">À propos</a>
+  <a href="{{ url_for('sponsors_protect') }}">Partenaires</a>
+
+  <div class="dropdown">
+    <a href="#" class="dropdown-btn cellules-btn">
+      Cellules <span class="arrow">&#9662;</span>
+    </a>
+    <div class="dropdown-content">
+      <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
+      <a href="{{ url_for('cellule_logistique') }}">Cellule Logistique</a>
+      <a href="{{ url_for('cellule_conception') }}">Cellule Conception</a>
+      <a href="{{ url_for('cellule_media') }}">Cellule Media</a>
+      <a href="{{ url_for('cellule_sponsoring') }}">Cellule Sponsoring</a>
+      <a href="{{ url_for('cellule_communication') }}">Cellule Communication Externe</a>
+      <a href="{{ url_for('cellule_formation') }}">Cellule Formation</a>
+    </div>
+  </div>
+</nav>
+
+<div class="section">
+  <h1>Soumettre un projet</h1>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul style="margin-top: 10px;">
+      {% for message in messages %}
+        <li style="color: #007a5e; margin-bottom: 6px;">{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  {% if not can_upload %}
+    <div style="margin-top: 14px;">
+      <p style="margin-bottom: 10px;">
+        Dépôt protégé. Entrez le code d’accès pour pouvoir téléverser.
+      </p>
+
+      <form action="{{ url_for('assignments') }}" method="post"
+            style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+        <input type="hidden" name="action" value="unlock">
+        <input type="password" name="access_code" placeholder="Code d’accès" required
+               style="padding:10px 12px; border-radius:8px; border:1px solid #ddd; min-width:240px;">
+        <button type="submit">Déverrouiller</button>
+      </form>
+    </div>
+  {% endif %}
+
+  {% if can_upload %}
+    <form action="{{ url_for('assignments') }}" method="post" enctype="multipart/form-data" style="margin-top: 18px;">
+      <input type="hidden" name="action" value="upload">
+
+      <label for="title"><strong>Titre du projet</strong></label><br>
+      <input type="text" name="title" id="title" required
+             style="width:100%; max-width:700px; padding:10px 12px; border-radius:8px; border:1px solid #ddd; margin-top:8px;"><br><br>
+
+      <label for="category"><strong>Catégorie</strong></label><br>
+      <select name="category" id="category" required
+              style="width:100%; max-width:320px; padding:10px 12px; border-radius:8px; border:1px solid #ddd; margin-top:8px;">
+        <option value="PFE">PFE</option>
+        <option value="Hackathon">Hackathon</option>
+        <option value="Course project">Course project</option>
+      </select><br><br>
+
+      <label for="description"><strong>Description</strong></label><br>
+      <textarea name="description" id="description" rows="4"
+                style="width:100%; max-width:700px; padding:10px 12px; border-radius:8px; border:1px solid #ddd; margin-top:8px;"
+                placeholder="Objectif, contexte, livrables, etc."></textarea><br><br>
+
+      <label for="file"><strong>Fichier</strong> (PDF, DOCX, ZIP, PNG, JPG, JPEG)</label><br>
+      <input type="file" name="file" id="file" required style="margin-top:10px;"><br><br>
+
+      <button type="submit">Téléverser</button>
+    </form>
+  {% endif %}
+</div>
+
+<div class="section">
+  <h2>Projets déposés</h2>
+
+  {% if projects and projects|length > 0 %}
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 14px;">
+      {% for p in projects %}
+        <div style="border:1px solid rgba(0,0,0,0.08); border-radius:12px; padding:14px; box-shadow:0 0 10px rgba(0,0,0,0.06);">
+          <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
+            <h3 style="color:#007a5e; margin-bottom:10px; font-size:18px; line-height:1.2;">{{ p.title }}</h3>
+            <span style="font-size:12px; background:#e9fff4; color:#007a5e; padding:6px 10px; border-radius:999px; white-space:nowrap;">
+              {{ p.category }}
+            </span>
+          </div>
+
+          {% if p.description %}
+            <p style="margin-bottom: 10px;">{{ p.description }}</p>
+          {% endif %}
+
+          <p style="font-size: 13px; color: #333; margin-bottom: 12px;">
+            Déposé le: {{ p.uploaded_at }}
+          </p>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            <a class="button" href="{{ url_for('static', filename='uploads/' ~ p.filename) }}" target="_blank">
+              Télécharger
+            </a>
+
+            {% if can_upload %}
+              <form method="POST"
+                    action="{{ url_for('delete_project', filename=p.filename) }}"
+                    onsubmit="return confirm('Supprimer ce projet ?');"
+                    style="display:inline;">
+                <button type="submit" style="background:#c0392b;">Supprimer</button>
+              </form>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p style="margin-top: 10px;">Aucun projet n’a encore été déposé.</p>
+  {% endif %}
+</div>
+
+<footer>
+  <p>&copy; 2025 Club Génie des Procédés – EMI</p>
+</footer>
+
+</body>
+</html>
