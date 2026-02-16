@@ -62,10 +62,10 @@
   <h2>Projets déposés</h2>
 
   {% if projects and projects|length > 0 %}
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 14px;">
+    <div class="projects-grid">
       {% for p in projects %}
         <div class="project-item">
-          <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
+          <div class="project-header">
             <h3>{{ p.title }}</h3>
             <span class="badge">{{ p.category }}</span>
           </div>
@@ -80,8 +80,8 @@
             <a class="button" href="{{ url_for('static', filename='uploads/' ~ p.filename) }}" target="_blank">Télécharger</a>
 
             {% if can_upload %}
-              <form method="POST" action="{{ url_for('projects.delete_project', filename=p.filename) }}" onsubmit="return confirm('Supprimer ce projet ?');" style="display:inline;">
-                <button type="submit" style="background:#c0392b;">Supprimer</button>
+              <form method="POST" action="{{ url_for('projects.delete_project', filename=p.filename) }}" onsubmit="return confirm('Supprimer ce projet ?');" class="inline-form">
+                <button type="submit" class="button-danger">Supprimer</button>
               </form>
             {% endif %}
           </div>
