@@ -1,44 +1,23 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>À propos – Génie des Procédés</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-<header>
-    À propos du Génie des Procédés
-</header>
+{% block title %}À propos – Génie des Procédés{% endblock %}
 
-<nav>
-    <a href="{{ url_for('home') }}">Accueil</a>
-    <a href="{{ url_for('assignments') }}">Projets</a>
-    <a href="{{ url_for('courses') }}">Ressources</a>
-    <a href="{{ url_for('process') }}">À propos</a>
-    <a href="{{ url_for('sponsors_protect') }}">Partenaires</a>
-
-    <div class="dropdown">
-        <a href="#" class="dropdown-btn cellules-btn">
-          Cellules <span class="arrow">&#9662;</span>
-        </a>
-        <div class="dropdown-content">
-            <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
-            <a href="{{ url_for('cellule_logistique') }}">Cellule Logistique</a>
-            <a href="{{ url_for('cellule_conception') }}">Cellule Conception</a>
-            <a href="{{ url_for('cellule_media') }}">Cellule Media</a>
-            <a href="{{ url_for('cellule_sponsoring') }}">Cellule Sponsoring</a>
-            <a href="{{ url_for('cellule_communication') }}">Cellule Communication Externe</a>
-            <a href="{{ url_for('cellule_formation') }}">Cellule formation</a>
-        </div>
+{% block header %}
+<div class="page-header">
+    <img src="{{ url_for('static', filename='uploads/logo_emiprocess.jpeg') }}" alt="EMIPROCESS Logo">
+    <div>
+        <h1>À propos du Génie des Procédés</h1>
+        <p>Transforming matter, shaping the future</p>
     </div>
-</nav>
+</div>
+{% endblock %}
 
+{% block content %}
 <div class="section">
-    <h1>Qu’est-ce que le Génie des Procédés ?</h1>
+    <h1>Qu'est-ce que le Génie des Procédés ?</h1>
     <p>
-        Le Génie des Procédés est une discipline de l’ingénierie qui étudie, modélise et optimise la transformation de la matière et de l’énergie dans les procédés industriels.
-        Elle intervient dans des domaines variés comme la chimie, l’énergie, l’agroalimentaire, les matériaux, la pharmacie, ou encore l’environnement.
+        Le Génie des Procédés est une discipline de l'ingénierie qui étudie, modélise et optimise la transformation de la matière et de l'énergie dans les procédés industriels.
+        Elle intervient dans des domaines variés comme la chimie, l'énergie, l'agroalimentaire, les matériaux, la pharmacie, ou encore l'environnement.
     </p>
 </div>
 
@@ -48,11 +27,11 @@
         <li><strong>INSA Toulouse – Procédés et Environnement</strong></li>
         <li><strong>ENSIACET – Génie Chimique</strong></li>
         <li><strong>Université de Technologie de Compiègne (UTC)</strong></li>
-        <li><strong>Grenoble INP – Génie des procédés pour l’énergie</strong></li>
+        <li><strong>Grenoble INP – Génie des procédés pour l'énergie</strong></li>
         <li><strong>Partenariats en Espagne, Italie et Allemagne</strong></li>
     </ul>
     <p>
-        Ces doubles diplômes permettent d’approfondir ses compétences, d’accéder à une reconnaissance internationale et d’améliorer l’employabilité sur le marché européen.
+        Ces doubles diplômes permettent d'approfondir ses compétences, d'accéder à une reconnaissance internationale et d'améliorer l'employabilité sur le marché européen.
     </p>
 </div>
 
@@ -71,11 +50,11 @@
 <div class="section">
     <h2>💼 Débouchés professionnels</h2>
     <ul>
-        <li><strong>Industrie chimique et pétrochimique :</strong> ingénieur procédés, responsable d’unité de production</li>
+        <li><strong>Industrie chimique et pétrochimique :</strong> ingénieur procédés, responsable d'unité de production</li>
         <li><strong>Énergie :</strong> ingénieur thermicien, ingénieur HSE</li>
         <li><strong>Pharmaceutique / cosmétique :</strong> formulation, qualité, production</li>
         <li><strong>Agroalimentaire :</strong> optimisation de lignes de production</li>
-        <li><strong>Environnement :</strong> traitement de l’eau, gestion des déchets, dépollution</li>
+        <li><strong>Environnement :</strong> traitement de l'eau, gestion des déchets, dépollution</li>
         <li><strong>Recherche & Développement :</strong> innovation, simulation, transfert de technologie</li>
     </ul>
 </div>
@@ -84,17 +63,10 @@
     <h2>📌 Compétences clés acquises</h2>
     <ul>
         <li>Équilibres matière et énergie</li>
-        <li>Conception d’appareils et colonnes de séparation</li>
+        <li>Conception d'appareils et colonnes de séparation</li>
         <li>Transferts thermiques, mécaniques et diffusifs</li>
         <li>Simulation numérique (Python, MATLAB, Aspen Hysys)</li>
         <li>Optimisation et contrôle des procédés</li>
     </ul>
 </div>
-
-<footer>
-    &copy; 2025 Classe GPI – Présentation Génie des Procédés
-</footer>
-
-</body>
-</html>
-
+{% endblock %}

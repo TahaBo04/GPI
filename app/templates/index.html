@@ -1,43 +1,8 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Club Génie des Procédés – Accueil</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
+{% extends "base.html" %}
 
-<header style="background: white; display: flex; align-items: center; justify-content: center; gap: 20px; padding: 15px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,255,0,0.2);">
-    <img src="/static/uploads/logo_emiprocess.jpeg" alt="EMIPROCESS Logo" style="height: 80px;">
-    <div>
-        <h1 style="margin-bottom: 5px; color: black;">EMIPROCESS</h1>
-        <p style="font-size: 14px; color: green;">Transforming matter, shaping the future</p>
-    </div>
-</header>
+{% block title %}Club Génie des Procédés – Accueil{% endblock %}
 
-
-<nav class="navbar">
-    <a href="{{ url_for('home') }}">Accueil</a>
-    <a href="{{ url_for('assignments') }}">Projets</a>
-    <a href="{{ url_for('courses') }}">Ressources</a>
-    <a href="{{ url_for('process') }}">À propos</a>
-    <a href="{{ url_for('sponsors_protect') }}">Partenaires</a>
-    <div class="dropdown">
-        <a href="#" class="dropdown-btn cellules-btn">
-            Cellules <span class="arrow">&#9662;</span>
-        </a>
-        <div class="dropdown-content">
-            <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
-            <a href="{{ url_for('cellule_logistique') }}">Cellule Logistique</a>
-            <a href="{{ url_for('cellule_conception') }}">Cellule Conception</a>
-            <a href="{{ url_for('cellule_media') }}">Cellule Media</a>
-            <a href="{{ url_for('cellule_sponsoring') }}">Cellule Sponsoring</a>
-            <a href="{{ url_for('cellule_communication') }}">Cellule Communication Externe</a>
-            <a href="{{ url_for('cellule_formation') }}">Cellule formation</a>
-        </div>
-    </div>
-</nav>
+{% block content %}
 
 <section class="section intro">
     <h2>Bienvenue au Club Génie des Procédés</h2>
@@ -56,10 +21,10 @@
     <p>Une journée marquante dédiée à la valorisation des procédés industriels, réunissant étudiants, professeurs et entreprises autour de conférences, stands et networking. Une réussite totale pour une première édition !</p>
     
     <div class="gallery-grid">
-        <img src="/static/uploads/journee1.jpeg" alt="Stand 1">
-        <img src="/static/uploads/journee2.jpeg" alt="Stand 2">
-        <img src="/static/uploads/journee3.jpeg" alt="Conférence">
-        <img src="/static/uploads/journee1.jpg" alt="Équipe Club">
+        <img src="{{ url_for('static', filename='uploads/journee1.jpeg') }}" alt="Stand 1">
+        <img src="{{ url_for('static', filename='uploads/journee2.jpeg') }}" alt="Stand 2">
+        <img src="{{ url_for('static', filename='uploads/journee3.jpeg') }}" alt="Conférence">
+        <img src="{{ url_for('static', filename='uploads/journee1.jpg') }}" alt="Équipe Club">
     </div>
 </section>
 
@@ -67,14 +32,14 @@
     <h2>Nos Partenaires de Stage</h2>
     <p>Consultez nos entreprises partenaires pour stages & PFE :</p>
     
-    <a href="https://gpi-vuqr.onrender.com/sponsors_protect" class="button">Voir les entreprises partenaires</a>
+    <a href="{{ url_for('partners.sponsors_protect') }}" class="button">Voir les entreprises partenaires</a>
 </section>
 
 <section class="section resources">
     <h2>Ressources & Cours</h2>
     <p>Accédez à tous les supports pédagogiques utiles à votre parcours en Génie des Procédés.</p>
     
-    <a href="https://gpi-vuqr.onrender.com/courses" class="button">Accéder aux cours</a>
+    <a href="{{ url_for('resources.courses') }}" class="button">Accéder aux cours</a>
 </section>
 
 <section class="section projects">
@@ -85,17 +50,17 @@
 <section class="section team">
     <div class="team-left">
         <div>
-            <img src="/static/uploads/president.jpg" alt="Himmi Fatima Zahra – Présidente" class="team-img">
+            <img src="{{ url_for('static', filename='uploads/president.jpg') }}" alt="Himmi Fatima Zahra – Présidente" class="team-img">
             <p class="role-label">Présidente</p>
             <p class="name-label">Himmi Fatima Zahra</p>
         </div>
         <div>
-            <img src="/static/uploads/vp.jpeg" alt="Abad Mohamed – Vice-Président" class="team-img">
+            <img src="{{ url_for('static', filename='uploads/vp.jpeg') }}" alt="Abad Mohamed – Vice-Président" class="team-img">
             <p class="role-label">Vice-Président</p>
             <p class="name-label">Idnacer Mohamed</p>
         </div>
         <div>
-            <img src="/static/uploads/secretaire.jpg" alt="Ammor Imane – Secrétaire Générale" class="team-img">
+            <img src="{{ url_for('static', filename='uploads/secretaire.jpg') }}" alt="Ammor Imane – Secrétaire Générale" class="team-img">
             <p class="role-label">Secrétaire Générale</p>
             <p class="name-label">Ammor Imane</p>
         </div>
@@ -106,17 +71,7 @@
     </div>
 </section>
 
-<footer>
-    <p>&copy; 2025 Club Génie des Procédés – EMI</p>
-    <div>
-        <a href="https://www.linkedin.com/in/emi-process-b2b0b1292/" target="_blank">LinkedIn</a> |
-        <a href="https://www.instagram.com/emi_process/" target="_blank">Instagram</a> |
-        <a href="mailto:clubgenie@emi.ac.ma">Email</a>
-    </div>
-</footer>
-
-</body>
-</html>
+{% endblock %}
 
 
 

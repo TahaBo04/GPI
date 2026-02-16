@@ -1,43 +1,22 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Cellule Sponsoring – EMIPROCESS</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-<header>
-    <h1>Cellule Sponsoring</h1>
-</header>
+{% block title %}Cellule Sponsoring – EMIPROCESS{% endblock %}
 
-<nav>
-    <a href="{{ url_for('home') }}">Accueil</a>
-    <a href="{{ url_for('assignments') }}">Projets</a>
-    <a href="{{ url_for('courses') }}">Ressources</a>
-    <a href="{{ url_for('process') }}">À propos</a>
-    <a href="{{ url_for('sponsors_protect') }}">Sponsors</a>
-
-    <div class="dropdown">
-        <a href="#" class="dropdown-btn cellules-btn">
-            Cellules <span class="arrow">&#9662;</span>
-        </a>
-        <div class="dropdown-content">
-            <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
-            <a href="{{ url_for('cellule_logistique') }}">Cellule Logistique</a>
-            <a href="{{ url_for('cellule_conception') }}">Cellule Conception</a>
-            <a href="{{ url_for('cellule_media') }}">Cellule Media</a>
-            <a href="{{ url_for('cellule_sponsoring') }}">Cellule Sponsoring</a>
-            <a href="{{ url_for('cellule_communication') }}">Cellule Communication Externe</a>
-            <a href="{{ url_for('cellule_formation') }}">Cellule Formation</a>
-        </div>
+{% block header %}
+<div class="page-header">
+    <img src="{{ url_for('static', filename='uploads/logo_emiprocess.jpeg') }}" alt="EMIPROCESS Logo">
+    <div>
+        <h1>Cellule Sponsoring</h1>
+        <p>Transforming matter, shaping the future</p>
     </div>
-</nav>
+</div>
+{% endblock %}
 
+{% block content %}
 <section class="section">
     <h2>Mission de la Cellule Sponsoring</h2>
     <p>
-        La <strong>Cellule Sponsoring</strong> joue un rôle crucial dans le développement des activités du club. Elle est chargée d’identifier, de contacter et de collaborer avec des partenaires financiers pour soutenir les projets et événements du club.
+        La <strong>Cellule Sponsoring</strong> joue un rôle crucial dans le développement des activités du club. Elle est chargée d'identifier, de contacter et de collaborer avec des partenaires financiers pour soutenir les projets et événements du club.
     </p>
     <p>Ses principales responsabilités incluent :</p>
     <ul>
@@ -53,18 +32,12 @@
 
 <section class="section">
     <h2>Responsable de la Cellule</h2>
-    <div style="display: flex; justify-content: center; margin-top: 30px;">
-        <div style="text-align: center;">
-            <img src="/static/uploads/chef_sponso.jpeg" alt="Chef Sponsoring" class="team-img" style="max-width: 280px;">
+    <div class="team-container">
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='uploads/chef_sponso.jpeg') }}" alt="Chef Sponsoring" class="team-img">
             <p class="role-label">Responsable Cellule Sponsoring</p>
             <p class="name-label">En-najmi Siham | El Khabati Kawtar</p>
         </div>
     </div>
 </section>
-
-<footer>
-    <p>&copy; 2025 Club Génie des Procédés – EMI</p>
-</footer>
-
-</body>
-</html>
+{% endblock %}

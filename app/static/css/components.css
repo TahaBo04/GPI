@@ -207,3 +207,24 @@ label {
   border-radius: var(--border-radius);
   margin: 10px 0;
 }
+
+/* Team member containers */
+.team-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.team-container-multi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.team-member {
+  text-align: center;
+  max-width: 280px;
+}

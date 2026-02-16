@@ -1,38 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Cellule Projet – EMIPROCESS</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
+{% block title %}Cellule Projet – EMIPROCESS{% endblock %}
+
+{% block header %}
 <header>
     <h1>Cellule Projet</h1>
 </header>
+{% endblock %}
 
-<nav>
-    <a href="{{ url_for('home') }}">Accueil</a>
-    <a href="{{ url_for('assignments') }}">Projets</a>
-    <a href="{{ url_for('courses') }}">Ressources</a>
-    <a href="{{ url_for('process') }}">À propos</a>
-    <a href="{{ url_for('sponsors_protect') }}">Sponsors</a>
-
-    <div class="dropdown">
-        <a href="#" class="dropdown-btn cellules-btn">
-            Cellules <span class="arrow">&#9662;</span>
-        </a>
-        <div class="dropdown-content">
-            <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
-            <a href="{{ url_for('cellule_logistique') }}">Cellule Logistique</a>
-            <a href="{{ url_for('cellule_conception') }}">Cellule Conception</a>
-            <a href="{{ url_for('cellule_media') }}">Cellule Media</a>
-            <a href="{{ url_for('cellule_sponsoring') }}">Cellule Sponsoring</a>
-            <a href="{{ url_for('cellule_communication') }}">Cellule Communication Externe</a>
-            <a href="{{ url_for('cellule_formation') }}">Cellule Formation</a>
-        </div>
-    </div>
-</nav>
+{% block content %}
 
 <section class="section">
     <h2>Présentation de la Cellule Projet</h2>
@@ -51,25 +27,19 @@
         <li>Favoriser une culture d'innovation, d'engagement et de transmission</li>
     </ul>
     <p>
-        C’est une cellule stratégique, moteur de création, de savoir-faire et de rayonnement externe du club.
+        C'est une cellule stratégique, moteur de création, de savoir-faire et de rayonnement externe du club.
     </p>
 </section>
 
 <section class="section">
     <h2>Responsables de la Cellule</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: center; margin-top: 30px;">
-
-        <div style="text-align: center;">
-            <img src="{{ url_for('static', filename='uploads/chef_projet.jpeg') }}" alt="Chef Projet 1" class="team-img" style="max-width: 280px;">
+    <div class="cellule">
+        <div>
+            <img src="{{ url_for('static', filename='uploads/chef_projet.jpeg') }}" alt="Chef Projet 1" class="cellule-img">
             <p class="role-label">Responsable Cellule Projet</p>
             <p class="name-label">Boulaamane Taha | Fadil Abdelbassit</p>
         </div>
     </div>
 </section>
 
-<footer>
-    <p>&copy; 2025 Club Génie des Procédés – EMI</p>
-</footer>
-
-</body>
-</html>
+{% endblock %}

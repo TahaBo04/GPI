@@ -1,44 +1,23 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Cellule Communication Externe – EMIPROCESS</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-<header>
-    <h1>Cellule Communication Externe</h1>
-</header>
+{% block title %}Cellule Communication Externe – EMIPROCESS{% endblock %}
 
-<nav>
-    <a href="{{ url_for('home') }}">Accueil</a>
-    <a href="{{ url_for('assignments') }}">Projets</a>
-    <a href="{{ url_for('courses') }}">Ressources</a>
-    <a href="{{ url_for('process') }}">À propos</a>
-    <a href="{{ url_for('sponsors_protect') }}">Sponsors</a>
-
-    <div class="dropdown">
-        <a href="#" class="dropdown-btn cellules-btn">
-            Cellules <span class="arrow">&#9662;</span>
-        </a>
-        <div class="dropdown-content">
-            <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
-            <a href="{{ url_for('cellule_logistique') }}">Cellule Logistique</a>
-            <a href="{{ url_for('cellule_conception') }}">Cellule Conception</a>
-            <a href="{{ url_for('cellule_media') }}">Cellule Media</a>
-            <a href="{{ url_for('cellule_sponsoring') }}">Cellule Sponsoring</a>
-            <a href="{{ url_for('cellule_communication') }}">Cellule Communication Externe</a>
-            <a href="{{ url_for('cellule_formation') }}">Cellule Formation</a>
-        </div>
+{% block header %}
+<div class="page-header">
+    <img src="{{ url_for('static', filename='uploads/logo_emiprocess.jpeg') }}" alt="EMIPROCESS Logo">
+    <div>
+        <h1>Cellule Communication Externe</h1>
+        <p>Transforming matter, shaping the future</p>
     </div>
-</nav>
+</div>
+{% endblock %}
 
+{% block content %}
 <section class="section">
     <h2>Rôle de la Cellule Communication Externe</h2>
     <p>
-        La <strong>Cellule Communication Externe</strong> est chargée de gérer les relations du club avec l’extérieur.
-        Elle veille à la cohérence et à l’efficacité des échanges entre le club et ses divers interlocuteurs (entreprises, écoles, médias, etc.).
+        La <strong>Cellule Communication Externe</strong> est chargée de gérer les relations du club avec l'extérieur.
+        Elle veille à la cohérence et à l'efficacité des échanges entre le club et ses divers interlocuteurs (entreprises, écoles, médias, etc.).
     </p>
     <p>Ses responsabilités principales incluent :</p>
     <ul>
@@ -48,39 +27,26 @@
         <li>Coordonner les échanges inter-associatifs et inter-écoles</li>
     </ul>
     <p>
-        Cette cellule joue un rôle stratégique dans l’ouverture du club sur le monde extérieur et dans la valorisation de ses actions.
+        Cette cellule joue un rôle stratégique dans l'ouverture du club sur le monde extérieur et dans la valorisation de ses actions.
     </p>
 </section>
 
 <section class="section">
     <h2>Responsables de la Cellule</h2>
-
-    <div class="team" style="justify-content: center; gap: 60px; margin-top: 30px;">
-
+    <div class="team-container-multi">
         <!-- Chef 1 -->
-        <div style="text-align: center; max-width: 260px;">
-            <img src="{{ url_for('static', filename='uploads/chef_projet2.jpeg') }}"
-                 class="team-img"
-                 alt="Doha Akroud – Responsable communication externe">
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='uploads/chef_projet2.jpeg') }}" class="team-img" alt="Doha Akroud – Responsable communication externe">
             <p class="role-label">Responsable communication externe</p>
             <p class="name-label">El Rhadouini Salma</p>
         </div>
 
         <!-- Chef 2 -->
-        <div style="text-align: center; max-width: 260px;">
-            <img src="{{ url_for('static', filename='uploads/chef_communication_externe.jpeg') }}"
-                 class="team-img"
-                 alt="El Addali Hakima – Responsable communication externe">
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='uploads/chef_communication_externe.jpeg') }}" class="team-img" alt="El Addali Hakima – Responsable communication externe">
             <p class="role-label">Responsable communication externe</p>
             <p class="name-label">El Addali Hakima</p>
         </div>
-
     </div>
 </section>
-
-<footer>
-    <p>&copy; 2025 Club Génie des Procédés – EMI</p>
-</footer>
-
-</body>
-</html>
+{% endblock %}

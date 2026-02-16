@@ -1,69 +1,51 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Partenaires de Stage – Club GPI</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <style>
-        .company-card {
-            background: rgba(255, 255, 255, 0.08);
-            border-left: 5px solid #00ff88;
-            margin: 25px 0;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 12px rgba(0,255,136,0.2);
-        }
+{% extends "base.html" %}
 
-        .company-card h3 {
-            color: #00ff88;
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
+{% block title %}Partenaires de Stage – Club GPI{% endblock %}
 
-        .company-card p {
-            margin: 4px 0;
-            font-size: 16px;
-            color: black;
-        }
-
-        .company-card strong {
-            color: #00ff88;
-        }
-
-        .section h2 {
-            color: #00ff88;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Nos Partenaires</h1>
-</header>
-
-<nav>
-    <a href="{{ url_for('home') }}">Accueil</a>
-    <a href="{{ url_for('assignments') }}">Projets</a>
-    <a href="{{ url_for('courses') }}">Ressources</a>
-    <a href="{{ url_for('process') }}">À propos</a>
-    <a href="{{ url_for('sponsors_protect') }}">Partenaires</a>
-
-    <div class="dropdown">
-        <a href="#" class="dropdown-btn cellules-btn">
-          Cellules <span class="arrow">&#9662;</span>
-        </a>
-        <div class="dropdown-content">
-            <a href="{{ url_for('cellule_projet') }}">Cellule Projet</a>
-            <a href="{{ url_for('cellule_logistique') }}">Cellule Logistique</a>
-            <a href="{{ url_for('cellule_conception') }}">Cellule Conception</a>
-            <a href="{{ url_for('cellule_media') }}">Cellule Media</a>
-            <a href="{{ url_for('cellule_sponsoring') }}">Cellule Sponsoring</a>
-            <a href="{{ url_for('cellule_communication') }}">Cellule Communication Externe</a>
-            <a href="{{ url_for('cellule_formation') }}">Cellule formation</a>
-        </div>
+{% block header %}
+<div class="page-header">
+    <img src="{{ url_for('static', filename='uploads/logo_emiprocess.jpeg') }}" alt="EMIPROCESS Logo">
+    <div>
+        <h1>Nos Partenaires</h1>
+        <p>Transforming matter, shaping the future</p>
     </div>
-</nav>
+</div>
+{% endblock %}
 
+{% block extra_css %}
+<style>
+    .company-card {
+        background: rgba(255, 255, 255, 0.08);
+        border-left: 5px solid #00ff88;
+        margin: 25px 0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(0,255,136,0.2);
+    }
+
+    .company-card h3 {
+        color: #00ff88;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .company-card p {
+        margin: 4px 0;
+        font-size: 16px;
+        color: black;
+    }
+
+    .company-card strong {
+        color: #00ff88;
+    }
+
+    .section h2 {
+        color: #00ff88;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
 <section class="section">
     <h2>🔗 Liste des Entreprises Partenaires</h2>
 
@@ -144,10 +126,4 @@
     </div>
 
 </section>
-
-<footer>
-    <p>&copy; 2025 Club Génie des Procédés – EMI</p>
-</footer>
-
-</body>
-</html>
+{% endblock %}
