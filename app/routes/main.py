@@ -14,3 +14,9 @@ def home():
 def process():
     """About/process page route."""
     return render_template("process.html")
+
+
+@main_bp.route("/conferences")
+def conferences():
+    """Conferences page route."""
+    return render_template("conferences.html")

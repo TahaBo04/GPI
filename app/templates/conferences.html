@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Conférences – Club Génie des Procédés{% endblock %}
+
+{% block header %}
+<div class="page-header">
+    <img src="{{ url_for('static', filename='uploads/logo_emiprocess.jpeg') }}" alt="EMIPROCESS Logo">
+    <div>
+        <h1>Conférences</h1>
+        <p>Transforming matter, shaping the future</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="section">
+    <h1>Nos Conférences</h1>
+    <p>
+        Le Club Génie des Procédés organise régulièrement des conférences pour favoriser le partage de connaissances,
+        l'échange entre étudiants, professeurs et professionnels de l'industrie.
+    </p>
+</div>
+
+<div class="section">
+    <h2>📅 1ère Journée Process – Juin 2025</h2>
+    <p><strong>📍 EMI – Rabat</strong></p>
+    <p>
+        Une journée marquante dédiée à la valorisation des procédés industriels, réunissant étudiants,
+        professeurs et entreprises autour de conférences, stands et networking.
+        Une réussite totale pour une première édition !
+    </p>
+</div>
+
+<div class="section">
+    <h2>🎯 Objectifs de nos conférences</h2>
+    <ul>
+        <li>Rapprocher le monde académique et le monde industriel</li>
+        <li>Présenter les dernières innovations en génie des procédés</li>
+        <li>Offrir des opportunités de networking aux étudiants</li>
+        <li>Valoriser les projets et travaux de recherche</li>
+    </ul>
+</div>
+{% endblock %}
