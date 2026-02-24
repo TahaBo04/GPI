@@ -32,11 +32,13 @@ def create_app(config_name=None):
     from app.routes.resources import resources_bp
     from app.routes.partners import partners_bp
     from app.routes.teams import teams_bp
+    from app.routes.conferences import conferences_bp
     
     app.register_blueprint(main_bp)
     app.register_blueprint(projects_bp)
     app.register_blueprint(resources_bp)
     app.register_blueprint(partners_bp)
     app.register_blueprint(teams_bp)
+    app.register_blueprint(conferences_bp)
     
     return app

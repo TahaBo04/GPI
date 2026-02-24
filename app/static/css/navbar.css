@@ -7,10 +7,11 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 15px;
+  padding: 20px;
   border-radius: var(--border-radius-lg);
-  box-shadow: 0 0 15px var(--shadow-color);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   margin-bottom: 20px;
+  border-bottom: 3px solid var(--primary-color);
 }
 
 .page-header img {
@@ -42,19 +43,19 @@ header {
 
 /* Main navigation bar */
 nav, .navbar {
-  background-color: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #006600, #009a00);
   padding: 10px;
   border-radius: var(--border-radius-lg);
   margin: 20px auto;
   text-align: center;
-  box-shadow: 0 0 10px var(--shadow-color);
+  box-shadow: 0 4px 15px rgba(0, 154, 0, 0.3);
 }
 
 nav a, .navbar a {
   text-decoration: none;
   margin: 0 15px;
   padding: 10px 20px;
-  color: var(--text-color);
+  color: #fff;
   font-weight: 600;
   background-color: transparent;
   border: none;
@@ -63,7 +64,7 @@ nav a, .navbar a {
 }
 
 nav a:hover, .navbar a:hover {
-  background-color: var(--primary-hover);
+  background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
   border-radius: var(--border-radius);
 }
@@ -78,7 +79,7 @@ nav a:hover, .navbar a:hover {
 .dropdown-btn, .dropbtn, .cellules-btn {
   font-family: 'Poppins', sans-serif;
   background-color: transparent;
-  color: var(--text-color);
+  color: #fff;
   margin: 0 15px;
   padding: 10px 20px;
   font-size: 15px;
@@ -120,7 +121,7 @@ nav a:hover, .navbar a:hover {
 .dropdown:hover .dropdown-btn,
 .dropdown:hover .dropbtn,
 .dropdown:hover .cellules-btn {
-  background-color: var(--primary-hover);
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
   border-radius: var(--border-radius);
 }
@@ -138,9 +139,20 @@ nav a:hover, .navbar a:hover {
 /* Footer */
 footer {
   text-align: center;
-  color: var(--text-light);
+  color: #fff;
   font-size: 14px;
   padding: 20px;
   margin-top: 30px;
-  border-top: 1px solid #444;
+  background: linear-gradient(135deg, #006600, #009a00);
+  border-radius: var(--border-radius-lg);
+}
+
+footer a {
+  color: #d4ffd4;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
