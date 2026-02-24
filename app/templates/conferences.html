@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Conférences – Club Génie des Procédés{% endblock %}
+
+{% block header %}
+<div class="page-header">
+    <img src="{{ url_for('static', filename='uploads/logo_emiprocess.jpeg') }}" alt="EMIPROCESS Logo">
+    <div>
+        <h1>Nos Conférences</h1>
+        <p>Événements marquants du Club Génie des Procédés</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="section intro fade-in">
+    <h2>Conférences & Événements</h2>
+    <p>Le Club Génie des Procédés organise régulièrement des conférences et des rencontres pour enrichir le parcours de ses membres. Découvrez ci-dessous les événements phares qui ont marqué notre communauté.</p>
+</section>
+
+<section class="section conference-card fade-in">
+    <div class="conference-badge">Édition inaugurale</div>
+    <h2>🎤 La Première Édition de la Journée Process</h2>
+    <p class="conference-theme"><strong>Thème :</strong> Dessalement &amp; Énergies Renouvelables</p>
+    <p>
+        La toute première édition de la Journée Process a été un événement fondateur pour notre club. 
+        Organisée au sein de l'EMI, cette journée a réuni étudiants, enseignants et professionnels autour 
+        d'une thématique d'actualité : le dessalement de l'eau et les énergies renouvelables. 
+        Plusieurs conférenciers de renom sont venus partager leur expertise et leurs visions sur les défis 
+        énergétiques et environnementaux actuels. Les discussions ont couvert un large éventail d'idées 
+        innovantes, allant des technologies de dessalement aux solutions énergétiques durables, 
+        offrant aux participants une perspective riche et inspirante sur l'avenir du génie des procédés.
+    </p>
+    <div class="conference-image-slot">
+        <!-- Replace the src below with your actual image -->
+        <img src="{{ url_for('static', filename='uploads/conference_journee_process.jpg') }}" 
+             alt="Journée Process – Dessalement & Énergies Renouvelables"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="image-placeholder">
+            <span>📷</span>
+            <p>Image à ajouter<br><small>conference_journee_process.jpg</small></p>
+        </div>
+    </div>
+</section>
+
+<section class="section conference-card fade-in">
+    <div class="conference-badge">Rencontre intergénérationnelle</div>
+    <h2>🤝 Rencontre des Lauréats Process</h2>
+    <p class="conference-theme"><strong>Thème :</strong> Échange intergénérationnel &amp; partage d'expérience</p>
+    <p>
+        La Rencontre des Lauréats Process a été un moment fort de partage et de transmission. 
+        Cet événement a permis aux étudiants de première, deuxième et troisième année en génie des procédés 
+        de rencontrer d'anciens lauréats de la filière. Ces échanges précieux ont offert aux étudiants 
+        actuels un aperçu concret des parcours professionnels possibles après l'EMI, ainsi que des 
+        conseils pratiques pour réussir leur cursus et leur insertion professionnelle. 
+        Les anciens ont partagé leurs expériences, leurs réussites et les leçons apprises tout au long 
+        de leur carrière, créant un pont entre les générations d'ingénieurs process.
+    </p>
+    <div class="conference-image-slot">
+        <!-- Replace the src below with your actual image -->
+        <img src="{{ url_for('static', filename='uploads/conference_rencontre_laureats.jpg') }}" 
+             alt="Rencontre des Lauréats Process"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="image-placeholder">
+            <span>📷</span>
+            <p>Image à ajouter<br><small>conference_rencontre_laureats.jpg</small></p>
+        </div>
+    </div>
+</section>
+
+<section class="section conference-card fade-in">
+    <div class="conference-badge">Conférence invitée</div>
+    <h2>🌿 Conférence de Mr. Abdellatif Bouaichi</h2>
+    <p class="conference-theme"><strong>Thème :</strong> Énergies Renouvelables</p>
+    <p class="conference-location">📍 Grand Amphi – EMI</p>
+    <p>
+        Mr. Abdellatif Bouaichi, expert reconnu dans le domaine des énergies renouvelables, a honoré 
+        notre club de sa présence au grand amphithéâtre de l'EMI pour une conférence exceptionnelle. 
+        Au cours de cette intervention riche et captivante, il a partagé sa vaste connaissance du secteur 
+        des énergies renouvelables, abordant les dernières avancées technologiques, les enjeux de la 
+        transition énergétique au Maroc et dans le monde, ainsi que les opportunités de carrière dans 
+        ce domaine en pleine expansion. Sa passion et son expertise ont profondément inspiré les étudiants 
+        présents, renforçant leur motivation à contribuer à un avenir énergétique durable.
+    </p>
+    <div class="conference-image-slot">
+        <!-- Replace the src below with your actual image -->
+        <img src="{{ url_for('static', filename='uploads/conference_bouaichi.jpg') }}" 
+             alt="Conférence Mr. Abdellatif Bouaichi – Énergies Renouvelables"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="image-placeholder">
+            <span>📷</span>
+            <p>Image à ajouter<br><small>conference_bouaichi.jpg</small></p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
