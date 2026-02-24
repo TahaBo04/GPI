@@ -30,49 +30,77 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
+
+  .team-container-multi {
+    gap: 30px;
+  }
 }
 
 /* Mobile screens */
 @media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding: 8px;
+    font-size: 14px;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 14px;
   }
 
   .section {
-    padding: 20px;
-    margin: 20px auto;
+    padding: 16px;
+    margin: 14px auto;
+    border-radius: 8px;
   }
 
-  /* Navigation */
+  /* Navigation - vertical compact layout */
   nav, .navbar {
-    font-size: 14px;
-    padding: 8px;
+    font-size: 13px;
+    padding: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+    margin: 10px auto;
   }
 
   nav a, .navbar a {
-    display: block;
-    margin: 5px 0;
-    padding: 10px;
+    display: inline-block;
+    margin: 2px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 500;
   }
 
   .dropdown {
-    display: block;
+    display: inline-block;
+  }
+
+  .dropdown-btn, .dropbtn, .cellules-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin: 2px;
   }
 
   .dropdown-content {
-    position: static;
+    position: absolute;
     display: none;
-    width: 100%;
-    box-shadow: none;
-    margin-top: 5px;
+    min-width: 180px;
+    z-index: 1000;
   }
 
   .dropdown:hover .dropdown-content,
@@ -80,44 +108,56 @@
     display: block;
   }
 
+  .dropdown-content a {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
   /* Header */
   header {
-    font-size: 24px;
-    padding: 15px 20px;
+    font-size: 18px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
   }
 
   .page-header {
-    padding: 12px;
-    gap: 15px;
+    padding: 10px;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    text-align: center;
   }
 
   .page-header img {
-    height: 60px;
+    height: 50px;
   }
 
   .page-header h1 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
   }
 
   .page-header p {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   /* Gallery */
   .gallery-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 12px;
   }
 
   .gallery-grid img {
     max-width: 100%;
+    max-height: 200px;
   }
 
   /* Team */
   .team,
   .cellule {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+    margin-top: 20px;
   }
 
   .team-left,
@@ -125,9 +165,73 @@
     min-width: 100%;
   }
 
-  .team-img,
+  .team-img {
+    max-height: 220px;
+  }
+
   .cellule-img {
-    max-height: 300px;
+    max-width: 200px;
+    max-height: 240px;
+  }
+
+  .role-label {
+    font-size: 14px;
+  }
+
+  .name-label {
+    font-size: 13px;
+  }
+
+  .team-container-multi {
+    gap: 24px;
+  }
+
+  .team-member {
+    max-width: 200px;
+  }
+
+  /* Company cards */
+  .company-card {
+    padding: 14px;
+    margin: 14px 0;
+  }
+
+  .company-card h3 {
+    font-size: 17px;
+  }
+
+  .company-card p {
+    font-size: 13px;
+  }
+
+  /* Conference */
+  .conference-card {
+    padding: 16px;
+  }
+
+  .conference-badge {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .conference-theme {
+    font-size: 13px;
+  }
+
+  .conference-location {
+    font-size: 12px;
+  }
+
+  .conference-image-slot img {
+    max-width: 100%;
+  }
+
+  .image-placeholder {
+    height: 150px;
+  }
+
+  .image-placeholder span {
+    font-size: 32px;
   }
 
   /* Forms */
@@ -137,6 +241,8 @@
   select,
   textarea {
     max-width: 100%;
+    font-size: 13px;
+    padding: 8px 10px;
   }
 
   .form-inline {
@@ -148,6 +254,11 @@
   .form-inline select,
   .form-inline button {
     width: 100%;
+    margin-top: 8px;
+  }
+
+  label {
+    font-size: 13px;
     margin-top: 10px;
   }
 
@@ -157,53 +268,159 @@
   a.button {
     width: 100%;
     text-align: center;
+    font-size: 13px;
+    padding: 8px 16px;
   }
 
   .project-item button {
     width: auto;
     margin-bottom: 5px;
   }
+
+  /* Project items */
+  .project-item {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .project-item h3 {
+    font-size: 1rem;
+  }
+
+  .project-item p {
+    font-size: 13px;
+  }
+
+  .project-item .project-meta {
+    font-size: 11px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  /* Lists */
+  ul li {
+    font-size: 13px;
+    margin-bottom: 6px;
+    padding-left: 16px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 12px;
+    padding: 14px;
+    margin-top: 20px;
+  }
+
+  /* Login */
+  .login-box {
+    padding: 20px;
+    max-width: 320px;
+  }
+
+  .login-box h2 {
+    font-size: 1.1rem;
+  }
+
+  /* Flash messages */
+  .flash-messages li {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
 }
 
 /* Small mobile screens */
 @media (max-width: 480px) {
   body {
-    padding: 8px;
+    padding: 6px;
+    font-size: 13px;
   }
 
   h1 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   h2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
   }
 
   .section {
-    padding: 15px;
-    margin: 15px auto;
+    padding: 12px;
+    margin: 10px auto;
+  }
+
+  nav, .navbar {
+    padding: 4px;
+    gap: 1px;
   }
 
   nav a, .navbar a {
-    font-size: 13px;
-    padding: 8px;
+    font-size: 11px;
+    padding: 5px 7px;
+  }
+
+  .dropdown-btn, .dropbtn, .cellules-btn {
+    font-size: 11px;
+    padding: 5px 7px;
   }
 
   .page-header img {
-    height: 50px;
+    height: 40px;
   }
 
   .page-header h1 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
-  .project-item {
-    padding: 12px;
+  header {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .team-img {
+    max-height: 180px;
+  }
+
+  .cellule-img {
+    max-width: 180px;
+    max-height: 200px;
+  }
+
+  .gallery-grid img {
+    max-height: 160px;
+  }
+
+  .company-card {
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .company-card h3 {
+    font-size: 15px;
+  }
+
+  .company-card p {
+    font-size: 12px;
   }
 
   footer {
-    font-size: 12px;
-    padding: 15px;
+    font-size: 11px;
+    padding: 12px;
+  }
+
+  .login-box {
+    padding: 16px;
+    max-width: 280px;
   }
 }
 
