@@ -1,6 +1,7 @@
 """Flask application factory."""
 from flask import Flask
 import os
+from dotenv import load_dotenv
 
 
 def create_app(config_name=None):
@@ -13,6 +14,8 @@ def create_app(config_name=None):
     Returns:
         Configured Flask application instance
     """
+    load_dotenv()
+
     app = Flask(__name__)
     
     # Load configuration

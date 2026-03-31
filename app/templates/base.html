@@ -15,6 +15,7 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
+<div class="site-shell">
 
 {% block header %}
 <div class="page-header">
@@ -35,10 +36,10 @@
     <a href="{{ url_for('conferences.conferences') }}">Conférences</a>
     <a href="{{ url_for('partners.sponsors_protect') }}">Partenaires</a>
     <div class="dropdown">
-        <a href="#" class="dropdown-btn cellules-btn">
+        <button type="button" class="dropdown-btn cellules-btn" aria-expanded="false" aria-haspopup="true" aria-controls="cellules-menu">
             Cellules <span class="arrow">&#9662;</span>
-        </a>
-        <div class="dropdown-content">
+        </button>
+        <div class="dropdown-content" id="cellules-menu">
             <a href="{{ url_for('teams.cellule_projet') }}">Cellule Projet</a>
             <a href="{{ url_for('teams.cellule_logistique') }}">Cellule Logistique</a>
             <a href="{{ url_for('teams.cellule_conception') }}">Cellule Conception</a>
@@ -65,8 +66,10 @@
 {% endwith %}
 {% endblock %}
 
+<main>
 {% block content %}
 {% endblock %}
+</main>
 
 {% block footer %}
 <footer>
@@ -78,6 +81,52 @@
     </div>
 </footer>
 {% endblock %}
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+    const closeDropdowns = () => {
+        dropdowns.forEach((dropdown) => {
+            dropdown.classList.remove("active");
+            const button = dropdown.querySelector(".dropdown-btn");
+            if (button) {
+                button.setAttribute("aria-expanded", "false");
+            }
+        });
+    };
+
+    dropdowns.forEach((dropdown) => {
+        const button = dropdown.querySelector(".dropdown-btn");
+        if (!button) return;
+
+        button.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const isActive = dropdown.classList.toggle("active");
+
+            dropdowns.forEach((otherDropdown) => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove("active");
+                    const otherButton = otherDropdown.querySelector(".dropdown-btn");
+                    if (otherButton) {
+                        otherButton.setAttribute("aria-expanded", "false");
+                    }
+                }
+            });
+
+            button.setAttribute("aria-expanded", isActive ? "true" : "false");
+        });
+    });
+
+    document.addEventListener("click", closeDropdowns);
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeDropdowns();
+        }
+    });
+});
+</script>
 
 {% block extra_js %}{% endblock %}
 

@@ -1,158 +1,194 @@
-/* Navigation and header styles */
+/* Navigation, shared headers, and footer */
 
-/* Page header */
 .page-header {
-  background: white;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(232, 244, 237, 0.9));
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 24px;
+  padding: 24px 30px;
   border-radius: var(--border-radius-lg);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
-  border-bottom: 3px solid var(--primary-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 24px 45px rgba(16, 38, 28, 0.08);
+  margin-bottom: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::after {
+  content: "";
+  position: absolute;
+  inset: auto -60px -90px auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(216, 181, 98, 0.3), transparent 62%);
 }
 
 .page-header img {
-  height: 80px;
+  height: 88px;
+  width: auto;
+  filter: drop-shadow(0 14px 22px rgba(12, 107, 68, 0.16));
+  position: relative;
+  z-index: 1;
 }
 
 .page-header h1 {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   color: var(--text-color);
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
+  position: relative;
+  z-index: 1;
 }
 
 .page-header p {
-  font-size: 14px;
+  font-size: 0.98rem;
   color: var(--primary-color);
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
 }
 
-/* Section header (for pages like courses) */
 header {
-  background: var(--overlay-bg);
-  color: var(--primary-color);
+  background: linear-gradient(135deg, rgba(255, 253, 247, 0.96), rgba(221, 242, 231, 0.86));
+  color: var(--text-color);
   text-align: center;
-  padding: 20px 30px;
-  font-size: 30px;
-  font-weight: bold;
+  padding: 26px 32px;
+  font-size: clamp(1.55rem, 3vw, 2.4rem);
+  font-weight: 700;
   border-radius: var(--border-radius-lg);
   margin-bottom: 20px;
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+  box-shadow: 0 20px 40px rgba(16, 38, 28, 0.08);
+  border: 1px solid var(--border-color);
+  border-left: 8px solid var(--secondary-color);
 }
 
-/* Main navigation bar */
-nav, .navbar {
-  background: linear-gradient(135deg, #006600, #009a00);
-  padding: 10px;
+header h1,
+header p {
+  margin-bottom: 0;
+  color: inherit;
+}
+
+nav,
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #0f5b3a, #198552 58%, #11613e);
+  padding: 12px;
   border-radius: var(--border-radius-lg);
-  margin: 20px auto;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 154, 0, 0.3);
+  margin: 22px auto 26px;
+  box-shadow: 0 18px 36px rgba(12, 107, 68, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-nav a, .navbar a {
-  text-decoration: none;
-  margin: 0 15px;
-  padding: 10px 20px;
+nav a,
+.navbar a,
+.dropdown-btn,
+.dropbtn,
+.cellules-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 999px;
   color: #fff;
-  font-weight: 600;
-  background-color: transparent;
+  font-weight: 700;
+  font-size: 0.96rem;
+  background: transparent;
   border: none;
-  transition: background var(--transition-speed), color var(--transition-speed);
-  display: inline-block;
-}
-
-nav a:hover, .navbar a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  border-radius: var(--border-radius);
-}
-
-/* Dropdown menu */
-.dropdown {
-  font-family: 'Poppins', sans-serif;
-  display: inline-block;
-  position: relative;
-}
-
-.dropdown-btn, .dropbtn, .cellules-btn {
-  font-family: 'Poppins', sans-serif;
-  background-color: transparent;
-  color: #fff;
-  margin: 0 15px;
-  padding: 10px 20px;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
+  box-shadow: none;
   cursor: pointer;
-  transition: background var(--transition-speed), color var(--transition-speed);
+  font-family: var(--font-body);
+  transition:
+    background var(--transition-speed) ease,
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+nav a:hover,
+.navbar a:hover,
+.dropdown-btn:hover,
+.dropbtn:hover,
+.cellules-btn:hover,
+.dropdown.active .dropdown-btn {
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-flex;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #111;
-  min-width: 220px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 8px 16px var(--shadow-dark);
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 240px;
+  background: rgba(18, 53, 36, 0.96);
+  border-radius: 22px;
+  box-shadow: 0 24px 45px rgba(11, 26, 19, 0.32);
+  padding: 10px;
   z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .dropdown-content a {
-  color: white;
-  padding: 10px 16px;
-  text-decoration: none;
   display: block;
   margin: 0;
-  border-radius: 0;
-  background-color: transparent;
+  padding: 11px 14px;
+  border-radius: 14px;
+  color: var(--text-light);
+  font-weight: 600;
 }
 
 .dropdown-content a:hover {
-  background-color: var(--primary-color);
-  color: white;
+  background: rgba(217, 242, 228, 0.12);
+  color: #fff;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown.active .dropdown-content {
   display: block;
 }
 
-.dropdown:hover .dropdown-btn,
-.dropdown:hover .dropbtn,
-.dropdown:hover .cellules-btn {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  border-radius: var(--border-radius);
-}
-
 .arrow {
-  margin-left: 5px;
-  font-size: 14px;
+  font-size: 0.9rem;
   transition: transform var(--transition-speed) ease;
 }
 
-.dropdown:hover .arrow {
+.dropdown:hover .arrow,
+.dropdown.active .arrow {
   transform: rotate(180deg);
 }
 
-/* Footer */
 footer {
   text-align: center;
   color: #fff;
-  font-size: 14px;
-  padding: 20px;
+  padding: 26px 22px;
   margin-top: 30px;
-  background: linear-gradient(135deg, #006600, #009a00);
+  background: linear-gradient(135deg, #0f5b3a, #198552);
   border-radius: var(--border-radius-lg);
+  box-shadow: 0 18px 32px rgba(12, 107, 68, 0.2);
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 8px;
 }
 
 footer a {
-  color: #d4ffd4;
-  font-weight: 500;
+  color: #f7ecd2;
+  font-weight: 700;
 }
 
 footer a:hover {
   color: #fff;
-  text-decoration: underline;
 }

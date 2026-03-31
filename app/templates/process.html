@@ -47,6 +47,42 @@
     </ul>
 </div>
 
+<div class="section process-domains-section">
+    <div class="section-heading">
+        <div>
+            <p class="section-kicker">Spécialités & domaines</p>
+            <h2>Des fiches PDF à enrichir au fur et à mesure</h2>
+        </div>
+        <p class="section-description">
+            Cette zone est prête à accueillir vos documents de référence pour les domaines que vous souhaitez mettre en avant sur la page À propos.
+        </p>
+    </div>
+
+    <p class="process-domains-intro">
+        Les supports réels sont maintenant prévus pour <strong>cimenterie</strong>, <strong>énergie et environnement</strong> et <strong>pétrochimie</strong>. Les cartes ci-dessous basculent automatiquement d'un état placeholder vers un lien actif dès qu'un fichier est disponible.
+    </p>
+
+    <div class="process-domains-grid">
+        {% for domain in process_domains %}
+            <article class="process-domain-card">
+                <span class="process-domain-tag">{{ domain.tag }}</span>
+                <h3>{{ domain.title }}</h3>
+                <p>{{ domain.description }}</p>
+                <p class="process-domain-meta">{{ domain.focus }}</p>
+
+                {% if domain.pdf_exists %}
+                    <a href="{{ url_for('static', filename=domain.static_path) }}" class="button button-secondary" target="_blank" rel="noopener">
+                        Ouvrir le PDF
+                    </a>
+                {% else %}
+                    <span class="button button-muted">PDF à ajouter</span>
+                    <p class="file-hint">{{ domain.storage_hint }}</p>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </div>
+</div>
+
 <div class="section">
     <h2>Débouchés professionnels</h2>
     <ul>
