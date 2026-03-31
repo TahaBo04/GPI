@@ -11,12 +11,13 @@ class Config:
     
     # File upload configuration
     BASE_DIR = Path(__file__).parent.parent
-    UPLOAD_FOLDER = os.path.join("static", "uploads")
+    STATIC_DIR = BASE_DIR / "app" / "static"
+    UPLOAD_FOLDER = str(STATIC_DIR / "uploads")
     ALLOWED_EXTENSIONS = {"pdf", "docx", "zip", "png", "jpg", "jpeg"}
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max file size
     
     # Database/storage paths
-    PROJECTS_DB_PATH = os.path.join("static", "projects.json")
+    PROJECTS_DB_PATH = str(STATIC_DIR / "projects.json")
     
     # Access codes
     UPLOAD_ACCESS_CODE = os.environ.get("UPLOAD_ACCESS_CODE", "zyad lchgr")

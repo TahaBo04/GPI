@@ -75,6 +75,7 @@ GPI/
    cp .env.example .env
    # Edit .env with your settings
    ```
+   `.env` is loaded automatically at startup, and existing shell environment variables still take precedence.
 
 5. **Run the application**
    ```bash
@@ -82,7 +83,7 @@ GPI/
    ```
 
 6. **Access the application**
-   Open your browser and navigate to `http://localhost:5000`
+   Open your browser and navigate to `http://127.0.0.1:5000`
 
 ## Environment Variables
 
@@ -96,11 +97,13 @@ SPONSOR_PASSWORD=your-sponsor-password
 PORT=5000
 ```
 
+Uploaded project files are stored in `app/static/uploads`, and project metadata is stored in `app/static/projects.json`.
+
 ## Development
 
 ### Running in Development Mode
 ```bash
-export FLASK_ENV=development
+source venv/bin/activate
 python run.py
 ```
 
